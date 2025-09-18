@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kids Fashion Store</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4ECDC4",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .font-elegant { font-family: 'Cormorant Garamond', serif; }
+      .font-body { font-family: 'Montserrat', sans-serif; }
+      .modal { display: none; }
+      .modal.active { display: flex; }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen">
+    <header class="w-full bg-white shadow-sm fixed top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="text-gray-800 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a href="#" class="text-gray-800 hover:text-primary transition-colors"
+            >About</a
+          >
+          <a href="#" class="text-gray-800 hover:text-primary transition-colors"
+            >Shop</a
+          >
+          <a href="#" class="text-gray-800 hover:text-primary transition-colors"
+            >Contact</a
+          >
+        </nav>
+        <button class="md:hidden w-10 h-10 flex items-center justify-center">
+          <i class="ri-menu-line text-2xl"></i>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section
+        class="bg-gradient-to-b from-slate-50 to-white py-24 text-center"
+      >
+        <div class="container mx-auto px-4">
+          <h1 class="text-4xl md:text-6xl font-elegant font-semibold mb-6">
+            Shop our Amazon Store
+          </h1>
+          <p class="text-xl font-body font-light text-gray-600 mb-10">
+            Discover our best-selling kids fashion and much more
+          </p>
+          <a
+            href="#"
+            class="inline-block bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-colors"
+            >Shop Our Amazon Store</a
+          >
+        </div>
+      </section>
+      <section class="py-20 bg-gradient-to-b from-white to-slate-50">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl md:text-4xl font-elegant font-semibold text-center mb-12"
+          >
+            Featured Products
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto mb-16 rounded-full"></div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          >
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=cute%20baby%20girl%20dress%20in%20pastel%20pink%20color%2C%20high%20quality%20fabric%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=1&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">
+                  Lovely Princess Dress
+                </h3>
+                <p class="text-primary font-bold mb-4">$29.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=cute%20baby%20boy%20outfit%20set%20in%20blue%20color%2C%20comfortable%20cotton%20material%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=2&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">Cool Boy Set</h3>
+                <p class="text-primary font-bold mb-4">$34.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20winter%20jacket%20in%20bright%20yellow%20color%2C%20warm%20and%20cozy%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=3&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">Cozy Winter Jacket</h3>
+                <p class="text-primary font-bold mb-4">$49.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20summer%20shoes%20in%20white%20color%2C%20comfortable%20and%20stylish%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=4&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">Comfy Summer Shoes</h3>
+                <p class="text-primary font-bold mb-4">$39.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          >
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20colorful%20winter%20scarf%20and%20hat%20set%2C%20warm%20and%20fashionable%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=5&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Winter Accessory Set
+                </h3>
+                <p class="text-primary font-bold mb-4">$24.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20backpack%20in%20bright%20rainbow%20colors%2C%20durable%20material%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=6&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Rainbow Backpack
+                </h3>
+                <p class="text-primary font-bold mb-4">$32.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20swimming%20suit%20in%20aqua%20blue%20color%2C%20quick%20dry%20material%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=7&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Aqua Swimsuit
+                </h3>
+                <p class="text-primary font-bold mb-4">$27.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20pajama%20set%20with%20cute%20animal%20print%2C%20soft%20cotton%20material%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=8&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Cozy Pajama Set
+                </h3>
+                <p class="text-primary font-bold mb-4">$29.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20sport%20shoes%20in%20neon%20colors%2C%20comfortable%20design%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=9&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Sport Shoes
+                </h3>
+                <p class="text-primary font-bold mb-4">$44.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20denim%20jacket%20with%20patches%2C%20trendy%20style%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=10&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Denim Jacket
+                </h3>
+                <p class="text-primary font-bold mb-4">$54.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20party%20dress%20with%20sequins%2C%20sparkly%20and%20elegant%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=11&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Party Dress
+                </h3>
+                <p class="text-primary font-bold mb-4">$59.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative aspect-square">
+                <img
+                  src="https://readdy.ai/api/search-image?query=kids%20rain%20boots%20with%20fun%20patterns%2C%20waterproof%20material%2C%20on%20white%20background%2C%20product%20photography%20style&width=400&height=400&seq=12&orientation=squarish"
+                  alt="Kids Fashion"
+                  class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-elegant font-semibold mb-2">
+                  Rain Boots
+                </h3>
+                <p class="text-primary font-bold mb-4">$34.99</p>
+                <a
+                  href="#"
+                  class="block text-center border border-primary text-primary py-2 !rounded-button hover:bg-primary hover:text-white transition-colors"
+                  >Buy on Amazon</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-50 pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h3 class="text-xl font-elegant font-semibold mb-4">About Us</h3>
+            <p class="text-gray-600">
+              We offer the best selection of kids fashion on Amazon, carefully
+              curated for style and comfort.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-elegant font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Shop All</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >New Arrivals</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Best Sellers</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-elegant font-semibold mb-4">
+              Customer Service
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Shipping Info</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">Returns</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-elegant font-semibold mb-4">Newsletter</h3>
+            <form class="flex gap-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-1 px-4 py-2 border rounded-button focus:outline-none focus:border-primary"
+              />
+              <button
+                type="submit"
+                class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="text-center text-gray-600 pt-8 border-t">
+          <p>&copy; 2025 Kids Fashion Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <div
+      id="imageModal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center"
+    >
+      <div class="bg-white p-4 rounded-lg max-w-3xl w-full mx-4">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">Product Gallery</h3>
+          <button class="close-modal text-gray-500 hover:text-gray-700">
+            <i class="ri-close-line text-2xl"></i>
+          </button>
+        </div>
+        <div class="relative">
+          <img
+            id="modalImage"
+            src=""
+            alt="Product Image"
+            class="w-full h-auto rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+    <script id="modal-handler">
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const productImages = document.querySelectorAll(".product-card img");
+        const closeModal = document.querySelector(".close-modal");
+        productImages.forEach((img) => {
+          img.addEventListener("click", function () {
+            modalImage.src = this.src;
+            modal.classList.add("active");
+          });
+        });
+        closeModal.addEventListener("click", function () {
+          modal.classList.remove("active");
+        });
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.classList.remove("active");
+          }
+        });
+      });
+    </script>
+    <script id="mobile-menu">
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector(".md\\:hidden");
+        const nav = document.querySelector("nav");
+        menuButton.addEventListener("click", function () {
+          nav.classList.toggle("hidden");
+          nav.classList.toggle("flex");
+          nav.classList.toggle("flex-col");
+          nav.classList.toggle("absolute");
+          nav.classList.toggle("top-full");
+          nav.classList.toggle("left-0");
+          nav.classList.toggle("right-0");
+          nav.classList.toggle("bg-white");
+          nav.classList.toggle("p-4");
+          nav.classList.toggle("shadow-md");
+        });
+      });
+    </script>
+  </body>
+</html>

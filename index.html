@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon - Kids Fashion</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4ECDC4",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body { font-family: 'Quicksand', sans-serif; }
+      .countdown-item { animation: float 3s ease-in-out infinite; }
+      @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <main
+      class="relative min-h-screen overflow-hidden flex flex-col"
+      style="background-image: url('https://readdy.ai/api/search-image?query=joyful%20kids%20playing%20in%20a%20bright%20sunny%20park%20with%20natural%20lighting%2C%20soft%20pastel%20colors%2C%20blurred%20background%20perfect%20for%20overlay%20text%2C%20professional%20photography%20style%2C%20high%20key%20lighting%2C%20dreamy%20atmosphere&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center; background-attachment: fixed;"
+    >
+      <div class="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
+      <div
+        class="relative flex-1 flex flex-col items-center justify-center px-4 py-16 text-center z-10"
+      >
+        <h1
+          class="font-['Pacifico'] text-5xl md:text-7xl mb-16 text-primary animate-bounce"
+        >
+          logo
+        </h1>
+        <h2 class="text-3xl md:text-5xl font-['Pacifico'] mb-12 text-gray-800">
+          Something Magical is Coming Soon!
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div
+            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
+          >
+            <div class="text-4xl font-bold text-primary" id="days">00</div>
+            <div class="text-gray-600">Days</div>
+          </div>
+          <div
+            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
+          >
+            <div class="text-4xl font-bold text-primary" id="hours">00</div>
+            <div class="text-gray-600">Hours</div>
+          </div>
+          <div
+            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
+          >
+            <div class="text-4xl font-bold text-primary" id="minutes">00</div>
+            <div class="text-gray-600">Minutes</div>
+          </div>
+          <div
+            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
+          >
+            <div class="text-4xl font-bold text-primary" id="seconds">00</div>
+            <div class="text-gray-600">Seconds</div>
+          </div>
+        </div>
+        <div class="w-full max-w-md">
+          <h3 class="text-xl mb-4 text-gray-700">
+            Be the first to know when we launch!
+          </h3>
+          <form id="subscribe-form" class="flex gap-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 px-4 py-3 rounded-button bg-white/80 backdrop-blur-sm border-none focus:ring-2 focus:ring-primary/50 outline-none"
+              required
+            />
+            <button
+              type="submit"
+              class="px-6 py-3 bg-primary text-white font-semibold !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </div>
+      <footer
+        class="fixed bottom-0 left-0 right-0 translate-y-full bg-white/95 backdrop-blur-sm shadow-lg z-20 transition-transform duration-300"
+        id="footer"
+      >
+        <div class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="font-semibold text-lg mb-4">Contact Us</h4>
+              <p class="text-gray-600">1234 Fashion Avenue</p>
+              <p class="text-gray-600">New York, NY 10001</p>
+              <p class="text-gray-600">support@kidsfashion.com</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+              <div class="flex gap-4">
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-primary transition-colors"
+                >
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <i class="ri-instagram-line text-xl"></i>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-primary transition-colors"
+                >
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <i class="ri-facebook-line text-xl"></i>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-primary transition-colors"
+                >
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <i class="ri-twitter-line text-xl"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-600 hover:text-primary transition-colors"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-600 hover:text-primary transition-colors"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-600 hover:text-primary transition-colors"
+                    >Terms of Service</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script id="countdown-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const launchDate = new Date("2025-12-25").getTime();
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = launchDate - now;
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById("days").textContent = String(days).padStart(2, "0");
+          document.getElementById("hours").textContent = String(hours).padStart(
+            2,
+            "0",
+          );
+          document.getElementById("minutes").textContent = String(minutes).padStart(
+            2,
+            "0",
+          );
+          document.getElementById("seconds").textContent = String(seconds).padStart(
+            2,
+            "0",
+          );
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      });
+    </script>
+    <script id="scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        let lastScrollY = window.scrollY;
+        const footer = document.getElementById("footer");
+
+        window.addEventListener("scroll", () => {
+          const currentScrollY = window.scrollY;
+          const isScrollingDown = currentScrollY > lastScrollY;
+          const isNearBottom =
+            currentScrollY + window.innerHeight >=
+            document.documentElement.scrollHeight - 100;
+
+          if (isNearBottom || isScrollingDown) {
+            footer.style.transform = "translateY(0)";
+          } else {
+            footer.style.transform = "translateY(100%)";
+          }
+
+          lastScrollY = currentScrollY;
+        });
+      });
+    </script>
+
+    <script id="form-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("subscribe-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = form.querySelector('input[type="email"]').value;
+          alert("Thank you for subscribing! We'll notify you when we launch.");
+          form.reset();
+        });
+      });
+    </script>
+  </body>
+</html>

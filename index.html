@@ -1,255 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eminent Imports Limited, Canada</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-    />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#FF6B6B",
-              secondary: "#4ECDC4",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-      body { font-family: 'Quicksand', sans-serif; }
-      .countdown-item { animation: float 3s ease-in-out infinite; }
-      @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-      }
-    </style>
-  </head>
-  <body class="min-h-screen">
-    <main
-      class="relative min-h-screen overflow-hidden flex flex-col"
-      style="background-image: url('https://readdy.ai/api/search-image?query=joyful%20kids%20playing%20in%20a%20bright%20sunny%20park%20with%20natural%20lighting%2C%20soft%20pastel%20colors%2C%20blurred%20background%20perfect%20for%20overlay%20text%2C%20professional%20photography%20style%2C%20high%20key%20lighting%2C%20dreamy%20atmosphere&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center; background-attachment: fixed;"
-    >
-      <div class="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
-      <div
-        class="relative flex-1 flex flex-col items-center justify-center px-4 py-16 text-center z-10"
-      >
-        <div class="w-48 md:w-64 mb-16 animate-bounce">
-  <img src="logo-boy.png" alt="Eminent Imports Limited" class="w-full h-full object-contain">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eminent Imports Limited, Canada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#FF9B42",
+        secondary: "#4CC3D9",
+      },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: 'Quicksand', sans-serif;
+background-color: #FFF5E6;
+}
+.logo-font {
+font-family: 'Pacifico', serif;
+}
+.bg-image {
+background-image: url('https://readdy.ai/api/search-image?query=Happy%20diverse%20children%20playing%20outdoors%20in%20a%20sunny%20park%2C%20natural%20lighting%2C%20soft%20pastel%20colors%2C%20kids%20running%20and%20laughing%20together%2C%20wearing%20colorful%20casual%20clothes%2C%20blurred%20natural%20background%20with%20trees%20and%20grass%2C%20candid%20and%20joyful%20atmosphere%2C%20high%20quality%20professional%20photography&width=1920&height=1080&seq=kids-playing-bg&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+.countdown-box {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+border: 2px solid rgba(135, 206, 235, 0.3);
+}
+.pulse-animation {
+animation: pulse 2s infinite;
+}
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+.bounce-in {
+animation: bounceIn 1s ease-out;
+}
+@keyframes bounceIn {
+0% { transform: scale(0.3); opacity: 0; }
+50% { transform: scale(1.05); }
+70% { transform: scale(0.9); }
+100% { transform: scale(1); opacity: 1; }
+}
+.slide-up {
+animation: slideUp 1s ease-out 0.5s both;
+}
+@keyframes slideUp {
+from { transform: translateY(30px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+.fade-in {
+animation: fadeIn 1s ease-out 1s both;
+}
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+.input-focus:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.3);
+}
+.success-message {
+background: linear-gradient(135deg, #FF9B42, #FFB677);
+color: white;
+box-shadow: 0 4px 15px rgba(255, 155, 66, 0.3);
+}
+.error-message {
+background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+color: white;
+box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+.animate-float {
+animation: float 3s ease-in-out infinite;
+}
+</style>
+</head>
+<body class="min-h-screen bg-image relative overflow-x-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-white/60 to-white/40 backdrop-blur-sm"></div>
+<div class="relative z-10 min-h-screen flex flex-col items-center justify-center">
+<header class="text-center mb-8 mt-20 animate-bounce">
+<img src="logo-infant.png" alt="Logo" class="w-24 h-24 mx-auto mb-4 rounded-full shadow-lg">
+<div class="text-3xl text-primary font-bold" style="font-family: 'Pacifico', serif;">
+Eminent Imports
 </div>
-        <!-- <h1
-          class="font-['Pacifico'] text-5xl md:text-7xl mb-16 text-primary animate-bounce"
-        > 
-          Eminent Imports Limited
-        </h1>-->
-        <h2 class="text-3xl md:text-5xl font-['Pacifico'] mb-12 text-gray-800">
-          Something Magical is Coming Soon!
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          <div
-            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
-          >
-            <div class="text-4xl font-bold text-primary" id="days">00</div>
-            <div class="text-gray-600">Days</div>
-          </div>
-          <div
-            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
-          >
-            <div class="text-4xl font-bold text-primary" id="hours">00</div>
-            <div class="text-gray-600">Hours</div>
-          </div>
-          <div
-            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
-          >
-            <div class="text-4xl font-bold text-primary" id="minutes">00</div>
-            <div class="text-gray-600">Minutes</div>
-          </div>
-          <div
-            class="countdown-item bg-white/80 rounded-2xl p-4 shadow-lg backdrop-blur-sm"
-          >
-            <div class="text-4xl font-bold text-primary" id="seconds">00</div>
-            <div class="text-gray-600">Seconds</div>
-          </div>
-        </div>
-        <div class="w-full max-w-md">
-          <h3 class="text-xl mb-4 text-gray-700">
-            Be the first to know when we launch!
-          </h3>
-          <form id="subscribe-form" class="flex gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="flex-1 px-4 py-3 rounded-button bg-white/80 backdrop-blur-sm border-none focus:ring-2 focus:ring-primary/50 outline-none"
-              required
-            />
-            <button
-              type="submit"
-              class="px-6 py-3 bg-primary text-white font-semibold !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
-            >
-              Notify Me
-            </button>
-          </form>
-        </div>
-      </div>
-      <footer
-        class="fixed bottom-0 left-0 right-0 translate-y-full bg-white/95 backdrop-blur-sm shadow-lg z-20 transition-transform duration-300"
-        id="footer" 
-      >
-        <div class="max-w-7xl mx-auto px-4 py-8 md:py-12">
-          <div class="grid md:grid-cols-3 gap-8">
-            <div>
-              <h4 class="font-semibold text-lg mb-4">Contact Us</h4>
-              <p class="text-gray-600">Eminent Imports Limited</p>
-              <p class="text-gray-600">Mississauga, ON, CA, L5R 3L6</p>
-              <p class="text-gray-600">eminentimportslimited@gmail.com</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
-              <div class="flex gap-4">
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-primary transition-colors"
-                >
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-instagram-line text-xl"></i>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-primary transition-colors"
-                >
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-facebook-line text-xl"></i>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-primary transition-colors"
-                >
-                  <div class="w-8 h-8 flex items-center justify-center">
-                    <i class="ri-twitter-line text-xl"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-              <ul class="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-600 hover:text-primary transition-colors"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-600 hover:text-primary transition-colors"
-                    >Privacy Policy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-600 hover:text-primary transition-colors"
-                    >Terms of Service</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-    <script id="countdown-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const launchDate = new Date("2026-01-01").getTime();
-        function updateCountdown() {
-          const now = new Date().getTime();
-          const distance = launchDate - now;
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-          );
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          document.getElementById("days").textContent = String(days).padStart(2, "0");
-          document.getElementById("hours").textContent = String(hours).padStart(
-            2,
-            "0",
-          );
-          document.getElementById("minutes").textContent = String(minutes).padStart(
-            2,
-            "0",
-          );
-          document.getElementById("seconds").textContent = String(seconds).padStart(
-            2,
-            "0",
-          );
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-      });
-    </script>
-    <script id="scroll-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        let lastScrollY = window.scrollY;
-        const footer = document.getElementById("footer");
-
-        window.addEventListener("scroll", () => {
-          const currentScrollY = window.scrollY;
-          const isScrollingDown = currentScrollY > lastScrollY;
-          const isNearBottom =
-            currentScrollY + window.innerHeight >=
-            document.documentElement.scrollHeight - 100;
-
-          if (isNearBottom || isScrollingDown) {
-            footer.style.transform = "translateY(0)";
-          } else {
-            footer.style.transform = "translateY(100%)";
-          }
-
-          lastScrollY = currentScrollY;
-        });
-      });
-    </script>
-
-    <script id="form-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("subscribe-form");
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const email = form.querySelector('input[type="email"]').value;
-          alert("Thank you for subscribing! We'll notify you when we launch.");
-          form.reset();
-        });
-      });
-    </script>
-  </body>
+<div class="text-lg text-secondary mt-2" style="font-family: 'Pacifico', serif;">
+Kids Fashion
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-4">
+<div class="text-center max-w-2xl mx-auto">
+<h1 class="text-5xl font-bold text-primary mb-6 slide-up" style="font-family: 'Pacifico', serif;">
+A Magical Adventure Awaits!
+</h1>
+<div class="text-xl text-secondary mb-8">🌟 Get ready for something super special! 🌟</div>
+<div id="countdown" class="flex justify-center gap-6 mb-12 fade-in">
+<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
+<div id="days" class="text-5xl font-bold text-primary">00</div>
+<div class="text-lg text-secondary mt-1">Days</div>
+</div>
+<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
+<div id="hours" class="text-5xl font-bold text-primary">00</div>
+<div class="text-lg text-secondary mt-1">Hours</div>
+</div>
+<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
+<div id="minutes" class="text-5xl font-bold text-primary">00</div>
+<div class="text-lg text-secondary mt-1">Minutes</div>
+</div>
+<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
+<div id="seconds" class="text-5xl font-bold text-primary">00</div>
+<div class="text-lg text-secondary mt-1">Seconds</div>
+</div>
+</div>
+<div class="max-w-md mx-auto fade-in">
+<p class="text-2xl text-primary mb-8 text-center" style="font-family: 'Pacifico', serif;">Join our magical mailing list! ✨</p>
+<form id="subscriptionForm" class="flex flex-col sm:flex-row gap-4">
+<input
+type="email"
+id="email"
+placeholder="Your parent's email here"
+class="flex-1 px-6 py-4 rounded-lg w-96 text-gray-700 bg-white border-2 border-secondary text-lg shadow-lg focus:ring-4 focus:ring-secondary focus:ring-opacity-50 transition-all duration-300"
+required
+>
+<button
+type="submit"
+class="bg-secondary text-white px-8 py-4 rounded-lg text-lg font-bold whitespace-nowrap hover:bg-primary hover:transform hover:scale-105 transition-all duration-300 shadow-lg"
+>
+Notify Me
+</button>
+</form>
+<div id="message" class="mt-4 p-4 rounded-full text-center font-semibold hidden transition-all duration-300"></div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script id="countdown-timer">
+document.addEventListener("DOMContentLoaded", function () {
+  const targetDate = new Date("2025-12-25T00:00:00").getTime();
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML =
+        '<div class="text-4xl font-bold text-white">We\'re Live!</div>';
+      return;
+    }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    if (daysEl.textContent !== String(days).padStart(2, "0")) {
+      daysEl.textContent = String(days).padStart(2, "0");
+      daysEl.parentElement.classList.add("pulse-animation");
+      setTimeout(
+        () => daysEl.parentElement.classList.remove("pulse-animation"),
+        1000,
+      );
+    }
+    if (hoursEl.textContent !== String(hours).padStart(2, "0")) {
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      hoursEl.parentElement.classList.add("pulse-animation");
+      setTimeout(
+        () => hoursEl.parentElement.classList.remove("pulse-animation"),
+        1000,
+      );
+    }
+    if (minutesEl.textContent !== String(minutes).padStart(2, "0")) {
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      minutesEl.parentElement.classList.add("pulse-animation");
+      setTimeout(
+        () => minutesEl.parentElement.classList.remove("pulse-animation"),
+        1000,
+      );
+    }
+    if (secondsEl.textContent !== String(seconds).padStart(2, "0")) {
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+      secondsEl.parentElement.classList.add("pulse-animation");
+      setTimeout(
+        () => secondsEl.parentElement.classList.remove("pulse-animation"),
+        1000,
+      );
+    }
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
+</script>
+<script id="subscription-form">
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("subscriptionForm");
+  const emailInput = document.getElementById("email");
+  const messageDiv = document.getElementById("message");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showMessage("Please enter a valid email address", "error");
+      return;
+    }
+    const button = form.querySelector("button");
+    const originalText = button.innerHTML;
+    button.innerHTML =
+      '<div class="w-5 h-5 flex items-center justify-center"><i class="ri-loader-4-line animate-spin"></i></div> Subscribing...';
+    button.disabled = true;
+    setTimeout(() => {
+      showMessage(
+        "Thank you! We'll notify you when we launch our magical collection!",
+        "success",
+      );
+      emailInput.value = "";
+      button.innerHTML = originalText;
+      button.disabled = false;
+    }, 2000);
+  });
+  function showMessage(text, type) {
+    messageDiv.textContent = text;
+    messageDiv.className = `mt-4 p-4 rounded-full text-center font-semibold transition-all duration-300 ${type === "success" ? "success-message" : "error-message"}`;
+    messageDiv.classList.remove("hidden");
+    setTimeout(() => {
+      messageDiv.classList.add("hidden");
+    }, 5000);
+  }
+});
+</script>
+</body>
 </html>

@@ -111,10 +111,13 @@ animation: float 3s ease-in-out infinite;
 </style>
 </head>
 <body class="min-h-screen bg-image relative overflow-x-hidden">
+<!-- new design was commintted in the previous commit -->
+
+  
 <div class="absolute inset-0 bg-gradient-to-b from-white/60 to-white/40 backdrop-blur-sm"></div>
 <div class="relative z-10 min-h-screen flex flex-col items-center justify-center">
 <header class="text-center mb-8 mt-20 animate-bounce">
-<img src="logo-infant.png" alt="Logo" class="w-24 h-24 mx-auto mb-4 rounded-full shadow-lg">
+<img src="logo.png" alt="Logo" class="w-24 h-24 mx-auto mb-4 rounded-full shadow-lg">
 <div class="text-3xl text-primary font-bold" style="font-family: 'Pacifico', serif;">
 Eminent Imports
 </div>
@@ -171,7 +174,7 @@ Notify Me
 </div>
 <script id="countdown-timer">
 document.addEventListener("DOMContentLoaded", function () {
-  const targetDate = new Date("2025-12-25T00:00:00").getTime();
+  const targetDate = new Date("2026-01-01T00:00:00").getTime();
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = targetDate - now;

@@ -46,7 +46,7 @@ background-color: #FFF5E6;
 font-family: 'Pacifico', serif;
 }
 .bg-image {
-background-image: url('bg-img.jpg');
+background-image: url('logo.png');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -111,57 +111,54 @@ animation: float 3s ease-in-out infinite;
 </style>
 </head>
 <body class="min-h-screen bg-image relative overflow-x-hidden">
-<!-- new design was commintted in the previous commit -->
-
-  
 <div class="absolute inset-0 bg-gradient-to-b from-white/60 to-white/40 backdrop-blur-sm"></div>
 <div class="relative z-10 min-h-screen flex flex-col items-center justify-center">
-<header class="text-center mb-8 mt-20 animate-bounce">
-<img src="logo.png" alt="Logo" class="w-24 h-24 mx-auto mb-4 rounded-full shadow-lg">
-<div class="text-3xl text-primary font-bold" style="font-family: 'Pacifico', serif;">
+<header class="text-center mb-8 mt-10 sm:mt-20 animate-bounce">
+<img src="https://readdy.ai/api/search-image?query=cute%20playful%20cartoon%20teddy%20bear%20logo%20with%20rainbow%20colors%2C%20friendly%20smile%2C%20wearing%20a%20party%20hat%2C%20cheerful%20and%20fun%20design%20for%20children&width=120&height=120&seq=logo-2&orientation=squarish" alt="Logo" class="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full shadow-lg">
+<div class="text-2xl sm:text-3xl text-primary font-bold" style="font-family: 'Pacifico', serif;">
 Eminent Imports
 </div>
-<div class="text-lg text-secondary mt-2" style="font-family: 'Pacifico', serif;">
+<div class="text-base sm:text-lg text-secondary mt-2" style="font-family: 'Pacifico', serif;">
 Kids Fashion
 </div>
 </header>
 <main class="flex-1 flex flex-col items-center justify-center px-4">
 <div class="text-center max-w-2xl mx-auto">
-<h1 class="text-5xl font-bold text-primary mb-6 slide-up" style="font-family: 'Pacifico', serif;">
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6 slide-up" style="font-family: 'Pacifico', serif;">
 A Magical Adventure Awaits!
 </h1>
-<div class="text-xl text-secondary mb-8">🌟 Get ready for something super special! 🌟</div>
-<div id="countdown" class="flex justify-center gap-6 mb-12 fade-in">
-<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
-<div id="days" class="text-5xl font-bold text-primary">00</div>
-<div class="text-lg text-secondary mt-1">Days</div>
+<div class="text-lg sm:text-xl text-secondary mb-6 sm:mb-8">🌟 Get ready for something super special! 🌟</div>
+<div id="countdown" class="flex justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 fade-in">
+<div class="text-center bg-white p-2 sm:p-4 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-16 h-16 sm:w-24 sm:h-24 flex flex-col items-center justify-center">
+<div id="days" class="text-2xl sm:text-4xl font-bold text-primary">00</div>
+<div class="text-xs sm:text-base text-secondary mt-1">Days</div>
 </div>
-<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
-<div id="hours" class="text-5xl font-bold text-primary">00</div>
-<div class="text-lg text-secondary mt-1">Hours</div>
+<div class="text-center bg-white p-4 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-24 h-24 flex flex-col items-center justify-center">
+<div id="hours" class="text-4xl font-bold text-primary">00</div>
+<div class="text-base text-secondary mt-1">Hours</div>
 </div>
-<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
-<div id="minutes" class="text-5xl font-bold text-primary">00</div>
-<div class="text-lg text-secondary mt-1">Minutes</div>
+<div class="text-center bg-white p-4 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-24 h-24 flex flex-col items-center justify-center">
+<div id="minutes" class="text-4xl font-bold text-primary">00</div>
+<div class="text-base text-secondary mt-1">Minutes</div>
 </div>
-<div class="text-center bg-white p-6 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-32 h-32 flex flex-col items-center justify-center">
-<div id="seconds" class="text-5xl font-bold text-primary">00</div>
-<div class="text-lg text-secondary mt-1">Seconds</div>
+<div class="text-center bg-white p-4 rounded-xl shadow-lg transform hover:scale-110 transition-transform duration-300 w-24 h-24 flex flex-col items-center justify-center">
+<div id="seconds" class="text-4xl font-bold text-primary">00</div>
+<div class="text-base text-secondary mt-1">Seconds</div>
 </div>
 </div>
-<div class="max-w-md mx-auto fade-in">
-<p class="text-2xl text-primary mb-8 text-center" style="font-family: 'Pacifico', serif;">Join our magical mailing list! ✨</p>
-<form id="subscriptionForm" class="flex flex-col sm:flex-row gap-4">
+<div class="max-w-md w-full mx-auto fade-in">
+<p class="text-xl sm:text-2xl text-primary mb-6 sm:mb-8 text-center" style="font-family: 'Pacifico', serif;">Join our magical mailing list! ✨</p>
+<form id="subscriptionForm" class="flex flex-col sm:flex-row gap-4 w-full px-4 sm:px-0">
 <input
 type="email"
 id="email"
 placeholder="Your parent's email here"
-class="flex-1 px-6 py-4 rounded-lg w-96 text-gray-700 bg-white border-2 border-secondary text-lg shadow-lg focus:ring-4 focus:ring-secondary focus:ring-opacity-50 transition-all duration-300"
+class="flex-1 px-4 sm:px-6 py-3 sm:py-4 rounded-lg w-full sm:w-[600px] text-gray-700 bg-white border-2 border-secondary text-base sm:text-lg shadow-lg focus:ring-4 focus:ring-secondary focus:ring-opacity-50 transition-all duration-300"
 required
 >
 <button
 type="submit"
-class="bg-secondary text-white px-8 py-4 rounded-lg text-lg font-bold whitespace-nowrap hover:bg-primary hover:transform hover:scale-105 transition-all duration-300 shadow-lg"
+class="bg-secondary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-bold whitespace-nowrap hover:bg-primary hover:transform hover:scale-105 transition-all duration-300 shadow-lg"
 >
 Notify Me
 </button>

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KidsWear Store - Trendy Children's Clothing</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#FF69B4", secondary: "#FFB6C1" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bubblegum+Sans&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Comic Neue', cursive; }
+h2, h3, h4 { font-family: 'Bubblegum Sans', cursive; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Poppins', sans-serif; }
+.hero-bg {
+background-image: url('https://readdy.ai/api/search-image?query=cheerful%20children%20playing%20in%20colorful%20playground%20wearing%20trendy%20modern%20kids%20clothing%20bright%20sunny%20day%20with%20soft%20pastel%20background%20and%20playful%20atmosphere%20modern%20minimalist%20setting%20with%20white%20and%20light%20blue%20elements&width=1920&height=800&seq=hero001&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="w-full bg-white shadow-sm border-b border-gray-100">
+<div class="w-full px-4 lg:px-8">
+<!-- Top Header -->
+<div class="flex items-center justify-between py-4">
+<!-- Logo -->
+<div class="flex items-center">
+<h1 class="text-2xl font-['Pacifico'] text-primary">logo</h1>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex flex-1 justify-center space-x-8">
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">New Arrivals</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Boys</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Girls</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Baby</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Accessories</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Sale</a>
+</nav>
+<!-- Right Icons -->
+<div class="flex items-center space-x-6">
+<button class="w-8 h-8 flex items-center justify-center">
+<i class="ri-heart-line text-xl text-gray-600"></i>
+</button>
+<button class="w-8 h-8 flex items-center justify-center relative">
+<i class="ri-shopping-cart-line text-xl text-gray-600"></i>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center">
+<i class="ri-user-line text-xl text-gray-600"></i>
+</button>
+<button class="md:hidden w-8 h-8 flex items-center justify-center">
+<i class="ri-menu-line text-xl text-gray-600"></i>
+</button>
+</div>
+</div>
+<!-- Age Category Navigation -->
+<div class="hidden md:flex items-center justify-center py-3 border-t border-gray-100">
+<nav class="flex space-x-8">
+<a href="#" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">0-2 Years</a>
+<a href="#" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">2-5 Years</a>
+<a href="#" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">5-8 Years</a>
+<a href="#" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">8-12 Years</a>
+<a href="#" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Boys</a>
+<a href="#" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Girls</a>
+<a href="#" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Sale</a>
+</nav>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-bg relative w-full h-screen flex items-center">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"></div>
+<div class="relative w-full px-4 lg:px-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+Trendy Kids Fashion
+<span class="text-primary">Collection</span>
+</h2>
+<p class="text-xl text-gray-600 mb-8 leading-relaxed">
+Discover our amazing collection of comfortable, stylish, and affordable children's clothing for every age and occasion.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-4 !rounded-button font-semibold text-lg hover:bg-primary/90 transition-colors whitespace-nowrap">
+Shop Now
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 !rounded-button font-semibold text-lg hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+View Collections
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Categories -->
+<section class="py-16 px-4 lg:px-8">
+<div class="max-w-7xl mx-auto">
+<h3 class="text-3xl font-bold text-center text-gray-900 mb-12">Shop by Category</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=cute%20baby%20clothes%20colorful%20onesies%20and%20rompers%20on%20white%20background%20with%20soft%20pastel%20colors%20modern%20minimalist%20product%20photography&width=200&height=200&seq=cat001&orientation=squarish" alt="New Arrivals" class="w-full h-full object-cover rounded-lg">
+</div>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">New Arrivals</h4>
+<p class="text-sm text-gray-600">Latest trendy styles</p>
+</div>
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=bestselling%20kids%20t-shirts%20and%20jeans%20collection%20colorful%20children%20clothing%20on%20white%20background%20modern%20product%20photography%20with%20bright%20colors&width=200&height=200&seq=cat002&orientation=squarish" alt="Best Sellers" class="w-full h-full object-cover rounded-lg">
+</div>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Best Sellers</h4>
+<p class="text-sm text-gray-600">Most loved items</p>
+</div>
+<div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=kids%20sale%20clothing%20items%20with%20discount%20tags%20colorful%20children%20apparel%20on%20white%20background%20modern%20e-commerce%20product%20photography&width=200&height=200&seq=cat003&orientation=squarish" alt="Sale Items" class="w-full h-full object-cover rounded-lg">
+</div>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Sale Items</h4>
+<p class="text-sm text-gray-600">Up to 50% off</p>
+</div>
+<div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+<div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=special%20kids%20collection%20premium%20children%20clothing%20with%20elegant%20design%20on%20white%20background%20luxury%20product%20photography&width=200&height=200&seq=cat004&orientation=squarish" alt="Special Collections" class="w-full h-full object-cover rounded-lg">
+</div>
+<h4 class="text-lg font-semibold text-gray-900 mb-2">Special Collections</h4>
+<p class="text-sm text-gray-600">Limited editions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Products -->
+<section class="py-16 px-4 lg:px-8 bg-pink-50">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-center mb-12">
+<h3 class="text-3xl text-gray-900">Trending Products</h3>
+<button class="text-primary font-semibold hover:underline">View More</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer product-card" data-product-id="1" data-product-name="Rainbow Striped Tee" data-product-price="24.99" data-product-category="T-Shirts" data-product-description="A vibrant and comfortable rainbow striped t-shirt perfect for your little one's everyday adventures. Made with soft, breathable cotton fabric.">
+<div class="aspect-square overflow-hidden relative">
+<img src="https://readdy.ai/api/search-image?query=trendy%20kids%20rainbow%20striped%20t-shirt%20colorful%20children%20clothing%20on%20white%20background%20modern%20product%20photography%20with%20bright%20cheerful%20colors&width=300&height=300&seq=trend001&orientation=squarish" alt="Rainbow Striped Tee" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+<div class="absolute top-3 left-3">
+<span class="bg-primary/90 text-white text-xs px-3 py-1 rounded-full">New Arrival</span>
+</div>
+<div class="absolute top-3 right-3 flex flex-col gap-2">
+<button class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-primary hover:text-white transition-colors">
+<i class="ri-heart-line"></i>
+</button>
+</div>
+<div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-full bg-white text-primary py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap quick-view-btn">
+Quick View
+</button>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-500">(124)</span>
+</div>
+<span class="text-sm font-medium text-primary">In Stock</span>
+</div>
+<h4 class="font-semibold text-gray-900 mb-1 line-clamp-1">Rainbow Striped Tee</h4>
+<p class="text-sm text-gray-500 mb-3 line-clamp-2">A vibrant and comfortable rainbow striped t-shirt perfect for your little one's everyday adventures.</p>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold text-primary">$24.99</span>
+<button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=cute%20kids%20denim%20overalls%20with%20colorful%20patches%20children%20clothing%20on%20white%20background%20modern%20product%20photography%20playful%20design&width=300&height=300&seq=trend002&orientation=squarish" alt="Denim Overalls" class="w-full h-full object-cover object-top hover:scale-105 transition-transform">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Denim Overalls</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$39.99</span>
+<div class="flex items-center">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="text-sm text-gray-500 ml-1">(89)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=adorable%20kids%20unicorn%20print%20dress%20pink%20and%20purple%20children%20clothing%20on%20white%20background%20magical%20design%20modern%20product%20photography&width=300&height=300&seq=trend003&orientation=squarish" alt="Unicorn Print Dress" class="w-full h-full object-cover object-top hover:scale-105 transition-transform">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Unicorn Print Dress</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$32.99</span>
+<div class="flex items-center">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-500 ml-1">(156)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=cool%20kids%20superhero%20cape%20costume%20colorful%20children%20clothing%20on%20white%20background%20fun%20playful%20design%20modern%20product%20photography&width=300&height=300&seq=trend004&orientation=squarish" alt="Superhero Cape Set" class="w-full h-full object-cover object-top hover:scale-105 transition-transform">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Superhero Cape Set</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$28.99</span>
+<div class="flex items-center">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="text-sm text-gray-500 ml-1">(97)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Age-Based Collections -->
+<section class="py-16 px-4 lg:px-8 bg-gradient-to-b from-pink-50/50 to-white">
+<div class="max-w-7xl mx-auto">
+<!-- 0-2 Years -->
+<div class="mb-16">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-2xl text-gray-900">0-2 Years Collection</h3>
+<button class="text-primary font-semibold hover:underline">View More</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
+<div class="aspect-square overflow-hidden relative">
+<img src="https://readdy.ai/api/search-image?query=cute%20baby%20onesie%20with%20animal%20print%20soft%20pastel%20colors%20infant%20clothing%20on%20white%20background%20adorable%20design%20modern%20product%20photography&width=300&height=300&seq=baby001&orientation=squarish" alt="Animal Print Onesie" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary px-6 py-2 !rounded-button font-medium transform -translate-y-4 group-hover:translate-y-0 transition-transform opacity-0 group-hover:opacity-100 whitespace-nowrap">Quick View</button>
+</div>
+<div class="absolute top-3 right-3 flex flex-col gap-2">
+<button class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all">
+<i class="ri-heart-line text-gray-600"></i>
+</button>
+<button class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all delay-75">
+<i class="ri-share-line text-gray-600"></i>
+</button>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-500">(98)</span>
+</div>
+<h4 class="font-semibold text-gray-900 mb-1">Animal Print Onesie</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$18.99</span>
+<span class="text-sm text-gray-500">In Stock</span>
+</div>
+<button class="w-full bg-primary text-white py-2.5 !rounded-button font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i>
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=soft%20baby%20romper%20with%20cute%20bear%20design%20pastel%20blue%20infant%20clothing%20on%20white%20background%20comfortable%20fabric%20modern%20product%20photography&width=300&height=300&seq=baby002&orientation=squarish" alt="Bear Romper" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Bear Romper</h4>
+<span class="text-lg font-bold text-primary">$22.99</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=adorable%20baby%20tutu%20dress%20pink%20with%20flowers%20infant%20formal%20wear%20on%20white%20background%20elegant%20design%20modern%20product%20photography&width=300&height=300&seq=baby003&orientation=squarish" alt="Flower Tutu Dress" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Flower Tutu Dress</h4>
+<span class="text-lg font-bold text-primary">$26.99</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=cozy%20baby%20pajama%20set%20with%20stars%20and%20moon%20pattern%20soft%20cotton%20infant%20sleepwear%20on%20white%20background%20dreamy%20design%20modern%20product%20photography&width=300&height=300&seq=baby004&orientation=squarish" alt="Star Pajama Set" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Star Pajama Set</h4>
+<span class="text-lg font-bold text-primary">$24.99</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2-5 Years -->
+<div class="mb-16">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-2xl font-bold text-gray-900">2-5 Years Collection</h3>
+<button class="text-primary font-semibold hover:underline">View More</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=colorful%20toddler%20dinosaur%20t-shirt%20fun%20print%20children%20clothing%20on%20white%20background%20playful%20design%20modern%20product%20photography&width=300&height=300&seq=toddler001&orientation=squarish" alt="Dinosaur T-Shirt" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Dinosaur T-Shirt</h4>
+<span class="text-lg font-bold text-primary">$19.99</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=cute%20toddler%20princess%20dress%20with%20sparkles%20pink%20children%20formal%20wear%20on%20white%20background%20magical%20design%20modern%20product%20photography&width=300&height=300&seq=toddler002&orientation=squarish" alt="Princess Dress" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Princess Dress</h4>
+<span class="text-lg font-bold text-primary">$34.99</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=comfortable%20toddler%20jogger%20pants%20with%20pockets%20casual%20children%20clothing%20on%20white%20background%20sporty%20design%20modern%20product%20photography&width=300&height=300&seq=toddler003&orientation=squarish" alt="Jogger Pants" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Jogger Pants</h4>
+<span class="text-lg font-bold text-primary">$27.99</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=fun%20toddler%20cardigan%20sweater%20with%20rainbow%20buttons%20colorful%20children%20knitwear%20on%20white%20background%20cozy%20design%20modern%20product%20photography&width=300&height=300&seq=toddler004&orientation=squarish" alt="Rainbow Cardigan" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Rainbow Cardigan</h4>
+<span class="text-lg font-bold text-primary">$31.99</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Products -->
+<section class="py-16 px-4 lg:px-8 bg-pink-50/70">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-center mb-12">
+<h3 class="text-3xl text-gray-900">Popular Products</h3>
+<button class="text-primary font-semibold hover:underline">View More</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+<div class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full z-10">
+Best Seller
+</div>
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=popular%20kids%20graphic%20hoodie%20with%20cool%20design%20trendy%20children%20clothing%20on%20white%20background%20modern%20streetwear%20style%20product%20photography&width=300&height=300&seq=popular001&orientation=squarish" alt="Graphic Hoodie" class="w-full h-full object-cover object-top hover:scale-105 transition-transform">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Graphic Hoodie</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$42.99</span>
+<div class="flex items-center">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-500 ml-1">(203)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
+<div class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full z-10">
+Top Rated
+</div>
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=stylish%20kids%20sneakers%20colorful%20children%20shoes%20on%20white%20background%20trendy%20footwear%20modern%20product%20photography%20athletic%20design&width=300&height=300&seq=popular002&orientation=squarish" alt="Colorful Sneakers" class="w-full h-full object-cover object-top hover:scale-105 transition-transform">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Colorful Sneakers</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$48.99</span>
+<div class="flex items-center">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-500 ml-1">(178)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=trendy%20kids%20backpack%20with%20fun%20patterns%20colorful%20children%20school%20bag%20on%20white%20background%20practical%20design%20modern%20product%20photography&width=300&height=300&seq=popular003&orientation=squarish" alt="Fun Backpack" class="w-full h-full object-cover object-top hover:scale-105 transition-transform">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Fun Backpack</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$36.99</span>
+<div class="flex items-center">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="text-sm text-gray-500 ml-1">(145)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=cozy%20kids%20winter%20jacket%20with%20hood%20warm%20children%20outerwear%20on%20white%20background%20practical%20design%20modern%20product%20photography&width=300&height=300&seq=popular004&orientation=squarish" alt="Winter Jacket" class="w-full h-full object-cover object-top hover:scale-105 transition-transform">
+</div>
+<div class="p-4">
+<h4 class="font-semibold text-gray-900 mb-2">Winter Jacket</h4>
+<div class="flex items-center justify-between mb-3">
+<span class="text-lg font-bold text-primary">$54.99</span>
+<div class="flex items-center">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="text-sm text-gray-500 ml-1">(112)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Special Features -->
+<section class="py-16 px-4 lg:px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-truck-line text-2xl text-primary"></i>
+</div>
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Free Shipping</h4>
+<p class="text-gray-600">Free shipping on orders over $50. Fast and reliable delivery to your doorstep.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-refresh-line text-2xl text-secondary"></i>
+</div>
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Easy Returns</h4>
+<p class="text-gray-600">30-day hassle-free returns. If you're not satisfied, we'll make it right.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-shield-check-line text-2xl text-yellow-600"></i>
+</div>
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Secure Payment</h4>
+<p class="text-gray-600">Your payment information is always secure with our encrypted checkout.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Signup -->
+<section class="py-16 px-4 lg:px-8 bg-gradient-to-r from-pink-400 to-pink-300">
+<div class="max-w-4xl mx-auto text-center">
+<h3 class="text-3xl font-bold text-white mb-4">Stay Updated with Latest Collections</h3>
+<p class="text-white/90 mb-8 text-lg">Subscribe to our newsletter and get 15% off your first order!</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded text-gray-900 border-none focus:outline-none text-sm">
+<button class="bg-white text-primary px-6 py-3 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+Subscribe
+</button>
+</div>
+<p class="text-white/70 text-sm mt-4">By subscribing, you agree to our Privacy Policy and Terms of Service.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-16 px-4 lg:px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<h2 class="text-2xl font-['Pacifico'] text-primary mb-4">logo</h2>
+<p class="text-gray-300 mb-4">Your trusted destination for trendy, comfortable, and affordable children's clothing.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-twitter-line"></i>
+</a>
+<a href="#" class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<!-- Customer Service -->
+<div>
+<h4 class="font-semibold mb-4">Customer Service</h4>
+<ul class="space-y-2 text-gray-300">
+<li><a href="#" class="hover:text-primary transition-colors">Contact Us</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Shipping Info</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Returns & Exchanges</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Size Guide</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">FAQ</a></li>
+</ul>
+</div>
+<!-- About -->
+<div>
+<h4 class="font-semibold mb-4">About</h4>
+<ul class="space-y-2 text-gray-300">
+<li><a href="#" class="hover:text-primary transition-colors">Our Story</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Press</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Sustainability</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Affiliates</a></li>
+</ul>
+</div>
+<!-- Legal -->
+<div>
+<h4 class="font-semibold mb-4">Legal</h4>
+<ul class="space-y-2 text-gray-300">
+<li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Cookie Policy</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Accessibility</a></li>
+</ul>
+</div>
+</div>
+<!-- Payment Methods -->
+<div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 KidsWear Store. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-400 text-sm">We Accept:</span>
+<div class="flex space-x-2">
+<div class="w-8 h-8 bg-gray-700 rounded flex items-center justify-center">
+<i class="ri-visa-line text-white"></i>
+</div>
+<div class="w-8 h-8 bg-gray-700 rounded flex items-center justify-center">
+<i class="ri-mastercard-line text-white"></i>
+</div>
+<div class="w-8 h-8 bg-gray-700 rounded flex items-center justify-center">
+<i class="ri-paypal-line text-white"></i>
+</div>
+<div class="w-8 h-8 bg-gray-700 rounded flex items-center justify-center">
+<i class="ri-apple-line text-white"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="mobile-menu">
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".ri-menu-line").parentElement;
+  const mobileMenu = document.createElement("div");
+  mobileMenu.className = "fixed inset-0 bg-white z-50 hidden";
+  mobileMenu.innerHTML = `
+<div class="flex flex-col h-full">
+  <div class="flex justify-between items-center p-4 border-b">
+    <h1 class="text-2xl font-['Pacifico'] text-primary">logo</h1>
+    <button class="w-8 h-8 flex items-center justify-center" id="close-menu">
+      <i class="ri-close-line text-xl"></i>
+    </button>
+  </div>
+  
+  <div class="flex-1 overflow-y-auto">
+    <div class="p-4">
+      <div class="flex items-center gap-4 mb-6">
+        <button class="flex-1 py-2 border border-gray-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors">Sign In</button>
+        <button class="flex-1 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors">Register</button>
+      </div>
+      
+      <nav class="space-y-1">
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">New Arrivals</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <div class="h-px bg-gray-100 my-2"></div>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">Boys</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">Girls</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">Baby</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <div class="h-px bg-gray-100 my-2"></div>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">0-2 Years</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">2-5 Years</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">5-8 Years</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">8-12 Years</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <div class="h-px bg-gray-100 my-2"></div>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg hover:bg-pink-50 transition-colors">
+          <span class="text-gray-700">Accessories</span>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+        </a>
+        <a href="#" class="flex items-center justify-between p-3 rounded-lg bg-pink-50">
+          <span class="text-primary font-medium">Sale</span>
+          <i class="ri-arrow-right-s-line text-primary"></i>
+        </a>
+      </nav>
+    </div>
+  </div>
+  
+  <div class="p-4 border-t">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+          <i class="ri-customer-service-2-line text-gray-600"></i>
+        </div>
+        <span class="text-sm font-medium text-gray-700">Customer Support</span>
+      </div>
+      <i class="ri-arrow-right-s-line text-gray-400"></i>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+        <i class="ri-facebook-fill text-gray-600"></i>
+      </button>
+      <button class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+        <i class="ri-instagram-line text-gray-600"></i>
+      </button>
+      <button class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+        <i class="ri-twitter-line text-gray-600"></i>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+  document.body.appendChild(mobileMenu);
+
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  });
+
+  document.getElementById("close-menu").addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+    document.body.style.overflow = "";
+  });
+});
+</script>
+<script id="cart-functionality">
+document.addEventListener("DOMContentLoaded", function () {
+  let cartCount = 3;
+  const cartButtons = document.querySelectorAll(
+    'button:contains("Add to Cart")',
+  );
+  const cartCountElement = document
+    .querySelector(".ri-shopping-cart-line")
+    .parentElement.querySelector("span");
+  document.querySelectorAll("button").forEach((button) => {
+    if (button.textContent.includes("Add to Cart")) {
+      button.addEventListener("click", function () {
+        cartCount++;
+        cartCountElement.textContent = cartCount;
+        this.textContent = "Added!";
+        this.classList.add("bg-green-500");
+        this.classList.remove("bg-primary");
+        setTimeout(() => {
+          this.textContent = "Add to Cart";
+          this.classList.remove("bg-green-500");
+          this.classList.add("bg-primary");
+        }, 1500);
+      });
+    }
+  });
+});
+</script>
+<script id="newsletter-signup">
+document.addEventListener("DOMContentLoaded", function () {
+  const newsletterForm = document.querySelector(
+    'section:has(input[type="email"])',
+  );
+  const emailInput = newsletterForm.querySelector('input[type="email"]');
+  const subscribeButton = newsletterForm.querySelector("button");
+  subscribeButton.addEventListener("click", function () {
+    const email = emailInput.value.trim();
+    if (email && email.includes("@")) {
+      this.textContent = "Subscribed!";
+      this.classList.add("bg-green-500");
+      emailInput.value = "";
+      setTimeout(() => {
+        this.textContent = "Subscribe";
+        this.classList.remove("bg-green-500");
+      }, 2000);
+    } else {
+      emailInput.classList.add("border-red-500");
+      setTimeout(() => {
+        emailInput.classList.remove("border-red-500");
+      }, 2000);
+    }
+  });
+});
+</script>
+<!-- Product Modal -->
+<div id="productModal" class="fixed inset-0 bg-black/50 z-50 hidden">
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-3xl bg-white rounded-xl shadow-2xl">
+<div class="relative">
+<button class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors" id="closeModal">
+<i class="ri-close-line text-xl"></i>
+</button>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+<div class="space-y-4">
+<div class="aspect-square rounded-lg overflow-hidden bg-gray-100">
+<img id="modalMainImage" src="" alt="" class="w-full h-full object-cover">
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="thumbnail-btn aspect-square rounded-lg overflow-hidden bg-gray-100 hover:ring-2 hover:ring-primary transition-all">
+<img src="" alt="" class="w-full h-full object-cover">
+</button>
+<button class="thumbnail-btn aspect-square rounded-lg overflow-hidden bg-gray-100 hover:ring-2 hover:ring-primary transition-all">
+<img src="" alt="" class="w-full h-full object-cover">
+</button>
+<button class="thumbnail-btn aspect-square rounded-lg overflow-hidden bg-gray-100 hover:ring-2 hover:ring-primary transition-all">
+<img src="" alt="" class="w-full h-full object-cover">
+</button>
+<button class="thumbnail-btn aspect-square rounded-lg overflow-hidden bg-gray-100 hover:ring-2 hover:ring-primary transition-all">
+<img src="" alt="" class="w-full h-full object-cover">
+</button>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="mb-4">
+<h3 id="modalTitle" class="text-2xl font-bold text-gray-900 mb-2"></h3>
+<div class="flex items-center gap-2 mb-2">
+<span id="modalCategory" class="text-sm font-medium text-primary"></span>
+<span class="w-1 h-1 rounded-full bg-gray-300"></span>
+<div class="flex items-center gap-1">
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-500">(124)</span>
+</div>
+</div>
+<p id="modalPrice" class="text-2xl font-bold text-primary mb-2"></p>
+<p id="modalDescription" class="text-gray-600 mb-6"></p>
+</div>
+<div class="mb-6">
+<h4 class="font-medium text-gray-900 mb-3">Select Size</h4>
+<div class="grid grid-cols-5 gap-2">
+<button class="size-btn px-3 py-2 border border-gray-200 rounded text-sm font-medium hover:border-primary hover:text-primary transition-colors">2Y</button>
+<button class="size-btn px-3 py-2 border border-gray-200 rounded text-sm font-medium hover:border-primary hover:text-primary transition-colors">3Y</button>
+<button class="size-btn px-3 py-2 border border-gray-200 rounded text-sm font-medium hover:border-primary hover:text-primary transition-colors">4Y</button>
+<button class="size-btn px-3 py-2 border border-gray-200 rounded text-sm font-medium hover:border-primary hover:text-primary transition-colors">5Y</button>
+<button class="size-btn px-3 py-2 border border-gray-200 rounded text-sm font-medium hover:border-primary hover:text-primary transition-colors">6Y</button>
+</div>
+</div>
+<div class="mt-auto">
+<button class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<i class="ri-shopping-cart-line"></i>
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script id="modal-functionality">
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("productModal");
+  const closeModal = document.getElementById("closeModal");
+  const modalMainImage = document.getElementById("modalMainImage");
+  const modalTitle = document.getElementById("modalTitle");
+  function generateGalleryImages(baseImage) {
+    const imageUrl = baseImage;
+    const urlParts = imageUrl.split("&seq=");
+    const baseUrl = urlParts[0];
+    const orientation = urlParts[1].split("&")[1];
+    return [
+      `${baseUrl}&seq=gallery1&${orientation}`,
+      `${baseUrl}&seq=gallery2&${orientation}`,
+      `${baseUrl}&seq=gallery3&${orientation}`,
+      `${baseUrl}&seq=gallery4&${orientation}`,
+    ];
+  }
+  function updateGallery(mainImage) {
+    const galleryImages = generateGalleryImages(mainImage);
+    modalMainImage.src = mainImage;
+    document.querySelectorAll(".thumbnail-btn img").forEach((img, index) => {
+      img.src = galleryImages[index];
+    });
+  }
+  document.querySelectorAll(".thumbnail-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const newMainImage = this.querySelector("img").src;
+      modalMainImage.src = newMainImage;
+      document
+        .querySelectorAll(".thumbnail-btn")
+        .forEach((b) => b.classList.remove("ring-2", "ring-primary"));
+      this.classList.add("ring-2", "ring-primary");
+    });
+  });
+  const modalPrice = document.getElementById("modalPrice");
+  const modalCategory = document.getElementById("modalCategory");
+  const modalDescription = document.getElementById("modalDescription");
+  const sizeButtons = document.querySelectorAll(".size-btn");
+  document
+    .querySelectorAll(".product-card, .quick-view-btn")
+    .forEach((card) => {
+      card.addEventListener("click", function (e) {
+        if (
+          e.target.closest(".size-btn") ||
+          e.target.closest("button:not(.quick-view-btn)")
+        )
+          return;
+        const product = e.target.closest(".product-card");
+        const img = product.querySelector("img").src;
+        const title = product.dataset.productName;
+        const price = product.dataset.productPrice;
+        const category = product.dataset.productCategory;
+        const description = product.dataset.productDescription;
+        updateGallery(img);
+        modalTitle.textContent = title;
+        modalPrice.textContent = `$${price}`;
+        document
+          .querySelectorAll(".thumbnail-btn")[0]
+          .classList.add("ring-2", "ring-primary");
+        modalCategory.textContent = category;
+        modalDescription.textContent = description;
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      });
+    });
+  sizeButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      sizeButtons.forEach((b) =>
+        b.classList.remove("border-primary", "text-primary"),
+      );
+      this.classList.add("border-primary", "text-primary");
+    });
+  });
+  closeModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "";
+  });
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+  });
+});
+</script>
+</body>
+</html>

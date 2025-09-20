@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainbow Unicorn Dress - KidsWear</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#8B5CF6", secondary: "#EC4899" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .product-image-zoom {
+      transition: transform 0.3s ease;
+      }
+      .product-image-zoom:hover {
+      transform: scale(1.1);
+      }
+      .thumbnail-active {
+      border-color: #8B5CF6 !important;
+      border-width: 2px;
+      }
+      .size-selector.active {
+      background-color: #8B5CF6;
+      color: white;
+      border-color: #8B5CF6;
+      }
+      .color-selector.active {
+      box-shadow: 0 0 0 2px #8B5CF6;
+      }
+      .breadcrumb-separator::after {
+      content: '/';
+      margin: 0 0.5rem;
+      color: #9CA3AF;
+      }
+      .quantity-input {
+      -moz-appearance: textfield;
+      }
+      .quantity-input::-webkit-outer-spin-button,
+      .quantity-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <header class="w-full bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mr-2"
+            >
+              <span class="text-white text-sm font-bold">K</span>
+            </div>
+            <span class="font-['Pacifico'] text-xl text-gray-800"
+              >KidsWear</span
+            >
+            <span class="text-sm text-gray-500 ml-1">Magical Fashion</span>
+          </div>
+          <div class="flex-1 max-w-lg mx-8">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search for magical clothes..."
+                class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+              />
+              <div
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center"
+              >
+                <i class="ri-search-line text-gray-400 text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="relative">
+              <div
+                class="w-8 h-8 flex items-center justify-center cursor-pointer"
+              >
+                <i class="ri-heart-line text-gray-600 text-lg"></i>
+              </div>
+              <span
+                class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >2</span
+              >
+            </div>
+            <div class="relative">
+              <div
+                class="w-8 h-8 flex items-center justify-center cursor-pointer"
+              >
+                <i class="ri-shopping-cart-line text-gray-600 text-lg"></i>
+              </div>
+              <span
+                class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >5</span
+              >
+            </div>
+            <div
+              class="w-8 h-8 flex items-center justify-center cursor-pointer"
+            >
+              <i class="ri-user-line text-gray-600 text-lg"></i>
+            </div>
+          </div>
+        </div>
+        <nav class="border-t border-gray-100">
+          <div class="flex items-center justify-center space-x-8 py-4">
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Boys</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Girls</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Baby</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Shoes</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Accessories</a
+            >
+            <a href="#" class="text-secondary hover:text-secondary font-medium"
+              >Sale</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <nav class="flex items-center text-sm text-gray-500 mb-8">
+        <a href="#" class="hover:text-primary">Home</a>
+        <span class="breadcrumb-separator"></span>
+        <a href="#" class="hover:text-primary">Girls Clothing</a>
+        <span class="breadcrumb-separator"></span>
+        <a href="#" class="hover:text-primary">Dresses</a>
+        <span class="breadcrumb-separator"></span>
+        <span class="text-gray-900">Rainbow Unicorn Dress</span>
+      </nav>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="space-y-4">
+          <div class="relative overflow-hidden rounded-xl bg-gray-50">
+            <img
+              id="main-product-image"
+              src="https://readdy.ai/api/search-image?query=Beautiful%20rainbow%20unicorn%20dress%20for%20girls%2C%20magical%20colorful%20dress%20with%20sparkly%20unicorn%20print%2C%20dreamy%20children%20fashion%2C%20pastel%20rainbow%20colors%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality%20detailed%20view&width=600&height=600&seq=product-main&orientation=squarish"
+              alt="Rainbow Unicorn Dress"
+              class="w-full h-96 object-cover object-top product-image-zoom cursor-zoom-in"
+            />
+            <div
+              class="absolute top-4 right-4 bg-secondary text-white text-sm font-medium px-3 py-1 rounded-full"
+            >
+              Best Seller
+            </div>
+          </div>
+          <div class="grid grid-cols-4 gap-3">
+            <div class="thumbnail-container">
+              <img
+                src="https://readdy.ai/api/search-image?query=Rainbow%20unicorn%20dress%20front%20view%2C%20full%20dress%20display%2C%20magical%20unicorn%20print%20pattern%2C%20sparkly%20details%2C%20professional%20product%20photography&width=150&height=150&seq=thumb1&orientation=squarish"
+                alt="Front View"
+                class="w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-gray-200 hover:border-primary transition-colors thumbnail-active"
+                onclick="changeMainImage(this.src, this)"
+              />
+            </div>
+            <div class="thumbnail-container">
+              <img
+                src="https://readdy.ai/api/search-image?query=Rainbow%20unicorn%20dress%20back%20view%2C%20dress%20from%20behind%2C%20beautiful%20design%20details%2C%20zipper%20and%20finishing%2C%20professional%20product%20photography&width=150&height=150&seq=thumb2&orientation=squarish"
+                alt="Back View"
+                class="w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-gray-200 hover:border-primary transition-colors"
+                onclick="changeMainImage(this.src, this)"
+              />
+            </div>
+            <div class="thumbnail-container">
+              <img
+                src="https://readdy.ai/api/search-image?query=Rainbow%20unicorn%20dress%20fabric%20close%20up%2C%20sparkly%20material%20texture%2C%20magical%20shimmer%20effect%2C%20unicorn%20print%20detail%2C%20high%20quality%20fabric%20shot&width=150&height=150&seq=thumb3&orientation=squarish"
+                alt="Fabric Detail"
+                class="w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-gray-200 hover:border-primary transition-colors"
+                onclick="changeMainImage(this.src, this)"
+              />
+            </div>
+            <div class="thumbnail-container">
+              <img
+                src="https://readdy.ai/api/search-image?query=Child%20wearing%20rainbow%20unicorn%20dress%2C%20happy%20girl%20in%20magical%20dress%2C%20lifestyle%20product%20photography%2C%20joyful%20expression%2C%20natural%20lighting&width=150&height=150&seq=thumb4&orientation=squarish"
+                alt="Lifestyle"
+                class="w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-gray-200 hover:border-primary transition-colors"
+                onclick="changeMainImage(this.src, this)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">
+              Rainbow Unicorn Dress
+            </h1>
+            <p class="text-gray-600 text-sm mb-4">SKU: KW-RUD-001</p>
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="flex items-center">
+                <div class="flex items-center mr-2">
+                  <i class="ri-star-fill text-yellow-400 text-lg"></i>
+                  <i class="ri-star-fill text-yellow-400 text-lg"></i>
+                  <i class="ri-star-fill text-yellow-400 text-lg"></i>
+                  <i class="ri-star-fill text-yellow-400 text-lg"></i>
+                  <i class="ri-star-fill text-yellow-400 text-lg"></i>
+                </div>
+                <span class="text-lg font-medium text-gray-900">4.9</span>
+              </div>
+              <span class="text-gray-500">|</span>
+              <a href="#reviews" class="text-primary hover:underline"
+                >127 Reviews</a
+              >
+              <span class="text-gray-500">|</span>
+              <span class="text-green-600 font-medium">In Stock</span>
+            </div>
+          </div>
+          <div class="border-t border-b border-gray-200 py-6">
+            <div class="flex items-baseline space-x-4 mb-4">
+              <span class="text-4xl font-bold text-gray-900">$24.99</span>
+              <span class="text-2xl text-gray-500 line-through">$34.99</span>
+              <span
+                class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full"
+                >Save 29%</span
+              >
+            </div>
+            <p class="text-gray-600 leading-relaxed">
+              Let your little princess sparkle in this enchanting rainbow
+              unicorn dress! Crafted with premium soft cotton blend fabric
+              featuring a magical unicorn print with shimmering details. Perfect
+              for parties, playtime, or any day she wants to feel extra special.
+            </p>
+          </div>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">Color</h3>
+              <div class="flex items-center space-x-3">
+                <div
+                  class="color-selector active w-10 h-10 bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 rounded-full cursor-pointer border-2 border-gray-200"
+                  onclick="selectColor(this, 'Rainbow')"
+                ></div>
+                <div
+                  class="color-selector w-10 h-10 bg-gradient-to-r from-purple-300 to-pink-300 rounded-full cursor-pointer border-2 border-gray-200"
+                  onclick="selectColor(this, 'Purple Pink')"
+                ></div>
+                <div
+                  class="color-selector w-10 h-10 bg-gradient-to-r from-blue-300 to-teal-300 rounded-full cursor-pointer border-2 border-gray-200"
+                  onclick="selectColor(this, 'Ocean Blue')"
+                ></div>
+                <span id="selected-color" class="text-sm text-gray-600 ml-4"
+                  >Rainbow</span
+                >
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-semibold text-gray-900">Size</h3>
+                <a href="#" class="text-primary text-sm hover:underline"
+                  >Size Guide</a
+                >
+              </div>
+              <div class="grid grid-cols-4 gap-3">
+                <button
+                  class="size-selector px-4 py-3 border border-gray-300 rounded-lg text-center font-medium hover:border-primary transition-colors"
+                  onclick="selectSize(this, '2T')"
+                >
+                  2T
+                </button>
+                <button
+                  class="size-selector active px-4 py-3 border border-gray-300 rounded-lg text-center font-medium hover:border-primary transition-colors"
+                  onclick="selectSize(this, '3T')"
+                >
+                  3T
+                </button>
+                <button
+                  class="size-selector px-4 py-3 border border-gray-300 rounded-lg text-center font-medium hover:border-primary transition-colors"
+                  onclick="selectSize(this, '4T')"
+                >
+                  4T
+                </button>
+                <button
+                  class="size-selector px-4 py-3 border border-gray-300 rounded-lg text-center font-medium hover:border-primary transition-colors"
+                  onclick="selectSize(this, '5T')"
+                >
+                  5T
+                </button>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">Quantity</h3>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="flex items-center border border-gray-300 rounded-lg"
+                >
+                  <button
+                    class="w-10 h-10 flex items-center justify-center hover:bg-gray-50 rounded-l-lg"
+                    onclick="changeQuantity(-1)"
+                  >
+                    <i class="ri-subtract-line text-gray-600"></i>
+                  </button>
+                  <input
+                    type="number"
+                    id="quantity"
+                    value="1"
+                    min="1"
+                    max="10"
+                    class="w-16 h-10 text-center border-none focus:outline-none quantity-input"
+                  />
+                  <button
+                    class="w-10 h-10 flex items-center justify-center hover:bg-gray-50 rounded-r-lg"
+                    onclick="changeQuantity(1)"
+                  >
+                    <i class="ri-add-line text-gray-600"></i>
+                  </button>
+                </div>
+                <span class="text-sm text-gray-600">Only 8 left in stock</span>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <button
+              class="w-full bg-primary text-white font-semibold py-4 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap text-lg"
+            >
+              Add to Cart - $24.99
+            </button>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                class="flex items-center justify-center space-x-2 border border-gray-300 py-3 !rounded-button hover:border-primary hover:text-primary transition-colors whitespace-nowrap"
+              >
+                <i class="ri-heart-line text-lg"></i>
+                <span>Add to Wishlist</span>
+              </button>
+              <button
+                class="flex items-center justify-center space-x-2 border border-gray-300 py-3 !rounded-button hover:border-primary hover:text-primary transition-colors whitespace-nowrap"
+              >
+                <i class="ri-share-line text-lg"></i>
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-6 space-y-4">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
+              >
+                <i class="ri-truck-line text-green-600"></i>
+              </div>
+              <div>
+                <p class="font-medium text-gray-900">Free Shipping</p>
+                <p class="text-sm text-gray-600">On orders over $50</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center"
+              >
+                <i class="ri-refresh-line text-blue-600"></i>
+              </div>
+              <div>
+                <p class="font-medium text-gray-900">Easy Returns</p>
+                <p class="text-sm text-gray-600">30-day return policy</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center"
+              >
+                <i class="ri-shield-check-line text-purple-600"></i>
+              </div>
+              <div>
+                <p class="font-medium text-gray-900">Quality Guarantee</p>
+                <p class="text-sm text-gray-600">Premium materials only</p>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+              Product Details
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                <span>100% Premium Cotton Blend</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                <span>Machine Washable</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                <span>Sparkly Unicorn Print</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                <span>Comfortable Fit</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                <span>Safe for Sensitive Skin</span>
+              </li>
+            </ul>
+          </div>
+          <div class="border-t border-gray-200 pt-6 mt-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+              Description
+            </h3>
+            <div class="prose prose-sm text-gray-600">
+              <p class="mb-4">
+                Transform your little one's wardrobe with our enchanting Rainbow
+                Unicorn Dress. This magical piece combines comfort and whimsy,
+                perfect for special occasions or everyday wear. The dress
+                features a beautifully designed unicorn pattern set against a
+                dreamy rainbow backdrop, creating a stunning visual effect that
+                captures every child's imagination.
+              </p>
+              <p class="mb-4">
+                Crafted with premium cotton blend fabric, this dress ensures
+                breathability and comfort throughout the day. The carefully
+                selected materials are gentle on sensitive skin, making it
+                suitable for extended wear during parties, playdates, or special
+                events. The sparkly details add a touch of magic without being
+                overwhelming, creating the perfect balance between elegance and
+                playfulness.
+              </p>
+              <h4 class="text-gray-900 font-medium mt-6 mb-3">Key Features:</h4>
+              <ul class="list-disc pl-5 space-y-2 mb-4">
+                <li>Enchanting unicorn pattern with rainbow accents</li>
+                <li>Soft, breathable premium cotton blend fabric</li>
+                <li>Comfortable elastic waistband for easy wear</li>
+                <li>Delicate sparkly details that catch the light</li>
+                <li>Full skirt design for twirling and dancing</li>
+                <li>Easy-care machine washable fabric</li>
+              </ul>
+              <h4 class="text-gray-900 font-medium mt-6 mb-3">Perfect For:</h4>
+              <ul class="list-disc pl-5 space-y-2 mb-4">
+                <li>Birthday parties and special celebrations</li>
+                <li>Playdates and everyday adventures</li>
+                <li>Photo sessions and memorable moments</li>
+                <li>Holiday events and family gatherings</li>
+              </ul>
+              <p class="mb-4">
+                The dress features a classic A-line silhouette that flatters
+                every body type, with a comfortable elastic waistband that makes
+                it easy to put on and take off. The full skirt allows for plenty
+                of movement, perfect for twirling and playing. Available in
+                sizes 2T to 5T, this dress grows with your child while
+                maintaining its shape and color through multiple washes.
+              </p>
+              <div class="bg-gray-50 p-4 rounded-lg mt-6">
+                <p class="text-sm italic">
+                  Care Instructions: Machine wash cold with similar colors.
+                  Tumble dry low. Iron on low heat if needed. Do not bleach.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="mt-16 border-t border-gray-200 pt-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            You Might Also Like
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Discover more magical pieces from our enchanting collection
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Princess%20tutu%20skirt%20for%20girls%2C%20pink%20sparkly%20ballet%20tutu%20with%20glitter%2C%20elegant%20dance%20costume%20for%20children%2C%20dreamy%20and%20magical%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=related1&orientation=squarish"
+                alt="Princess Tutu Skirt"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+              >
+                <i class="ri-heart-line text-gray-600 text-sm"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                Princess Tutu Skirt
+              </h3>
+              <div class="flex items-center mb-2">
+                <div class="flex items-center">
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-2">4.8 (92)</span>
+              </div>
+              <div class="flex items-center mb-3">
+                <span class="text-lg font-bold text-gray-900">$28.99</span>
+                <span class="text-sm text-gray-500 line-through ml-2"
+                  >$39.99</span
+                >
+              </div>
+              <button
+                class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Fairy%20wings%20and%20wand%20set%20for%20girls%2C%20sparkly%20transparent%20wings%20with%20glitter%2C%20magical%20fairy%20costume%20accessories%2C%20enchanting%20and%20whimsical%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=related2&orientation=squarish"
+                alt="Fairy Wings Set"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+              >
+                <i class="ri-heart-line text-gray-600 text-sm"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-900 mb-2">Fairy Wings Set</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex items-center">
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-2">4.9 (168)</span>
+              </div>
+              <div class="flex items-center mb-3">
+                <span class="text-lg font-bold text-gray-900">$15.99</span>
+                <span class="text-sm text-gray-500 line-through ml-2"
+                  >$19.99</span
+                >
+              </div>
+              <button
+                class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Mermaid%20tail%20blanket%20for%20kids%2C%20shimmery%20teal%20and%20purple%20scales%2C%20cozy%20sleeping%20bag%20design%2C%20magical%20ocean%20themed%20bedding%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=related3&orientation=squarish"
+                alt="Mermaid Tail Blanket"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+              >
+                <i class="ri-heart-line text-gray-600 text-sm"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                Mermaid Tail Blanket
+              </h3>
+              <div class="flex items-center mb-2">
+                <div class="flex items-center">
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-2">4.9 (342)</span>
+              </div>
+              <div class="flex items-center mb-3">
+                <span class="text-lg font-bold text-gray-900">$29.99</span>
+                <span class="text-sm text-gray-500 line-through ml-2"
+                  >$39.99</span
+                >
+              </div>
+              <button
+                class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Ballerina%20dress%20for%20girls%2C%20pink%20tutu%20with%20sparkly%20bodice%2C%20elegant%20dance%20costume%2C%20graceful%20and%20beautiful%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=related4&orientation=squarish"
+                alt="Ballerina Dress"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+              >
+                <i class="ri-heart-line text-gray-600 text-sm"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-900 mb-2">Ballerina Dress</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex items-center">
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                </div>
+                <span class="text-xs text-gray-500 ml-2">4.7 (198)</span>
+              </div>
+              <div class="flex items-center mb-3">
+                <span class="text-lg font-bold text-gray-900">$26.99</span>
+                <span class="text-sm text-gray-500 line-through ml-2"
+                  >$34.99</span
+                >
+              </div>
+              <button
+                class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-900 text-white py-16 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center mb-6">
+              <div
+                class="w-8 h-8 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mr-2"
+              >
+                <span class="text-white text-sm font-bold">K</span>
+              </div>
+              <span class="font-['Pacifico'] text-xl">KidsWear</span>
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              Creating magical moments through enchanting children's fashion
+              that sparks imagination and brings joy to every adventure.
+            </p>
+            <div class="flex space-x-4">
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill text-sm"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-line text-sm"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-line text-sm"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-youtube-line text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >New Arrivals</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Best Sellers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Sale Items</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Size Guide</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Gift Cards</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Customer Service</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Shipping Info</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Returns & Exchanges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Track Your Order</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+            <p class="text-gray-300 mb-4">
+              Subscribe to get special offers and updates!
+            </p>
+            <div class="flex mb-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+              />
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div class="flex items-center space-x-4 mt-6">
+              <span class="text-sm text-gray-400">We Accept:</span>
+              <div class="flex space-x-2">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-visa-fill text-blue-500"></i>
+                </div>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-mastercard-fill text-red-500"></i>
+                </div>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-paypal-fill text-blue-400"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 KidsWear. All rights reserved. Made with ❤️ for magical
+              childhoods.
+            </p>
+            <div class="flex items-center space-x-6 text-sm">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Cookie Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="product-gallery">
+      function changeMainImage(src, thumbnail) {
+        document.getElementById("main-product-image").src = src;
+        document.querySelectorAll(".thumbnail-container img").forEach((img) => {
+          img.classList.remove("thumbnail-active");
+        });
+        thumbnail.classList.add("thumbnail-active");
+      }
+    </script>
+    <script id="product-options">
+      function selectColor(element, colorName) {
+        document.querySelectorAll(".color-selector").forEach((selector) => {
+          selector.classList.remove("active");
+        });
+        element.classList.add("active");
+        document.getElementById("selected-color").textContent = colorName;
+      }
+      function selectSize(element, size) {
+        document.querySelectorAll(".size-selector").forEach((selector) => {
+          selector.classList.remove("active");
+        });
+        element.classList.add("active");
+      }
+      function changeQuantity(change) {
+        const quantityInput = document.getElementById("quantity");
+        let currentValue = parseInt(quantityInput.value);
+        let newValue = currentValue + change;
+        if (newValue >= 1 && newValue <= 10) {
+          quantityInput.value = newValue;
+        }
+      }
+    </script>
+    <script id="wishlist-functionality">
+      document.addEventListener("DOMContentLoaded", function () {
+        const heartIcons = document.querySelectorAll(".ri-heart-line");
+        heartIcons.forEach((icon) => {
+          icon.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (this.classList.contains("ri-heart-line")) {
+              this.classList.remove("ri-heart-line");
+              this.classList.add("ri-heart-fill");
+              this.style.color = "#EC4899";
+            } else {
+              this.classList.remove("ri-heart-fill");
+              this.classList.add("ri-heart-line");
+              this.style.color = "";
+            }
+          });
+        });
+      });
+    </script>
+    <script id="search-functionality">
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(
+          'input[placeholder="Search for magical clothes..."]',
+        );
+        searchInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            console.log("Searching for:", this.value);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

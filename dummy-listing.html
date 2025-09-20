@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KidsWear - Product Listing</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#8B5CF6", secondary: "#EC4899" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .product-card {
+      transition: all 0.3s ease;
+      }
+      .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .filter-sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      }
+      .filter-sidebar.active {
+      transform: translateX(0);
+      }
+      .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      }
+      .modal.active {
+      display: flex;
+      }
+      .modal-content {
+      background-color: white;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 16px;
+      max-height: 90vh;
+      overflow-y: auto;
+      }
+      .custom-checkbox {
+      appearance: none;
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid #d1d5db;
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
+      position: relative;
+      }
+      .custom-checkbox:checked {
+      background-color: #8B5CF6;
+      border-color: #8B5CF6;
+      }
+      .custom-checkbox:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      }
+      .price-range {
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e5e7eb;
+      outline: none;
+      }
+      .price-range::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #8B5CF6;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .price-range::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #8B5CF6;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <header class="w-full bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mr-2"
+            >
+              <span class="text-white text-sm font-bold">K</span>
+            </div>
+            <span class="font-['Pacifico'] text-xl text-gray-800"
+              >KidsWear</span
+            >
+            <span class="text-sm text-gray-500 ml-1">Magical Fashion</span>
+          </div>
+          <div class="flex-1 max-w-lg mx-8">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search for magical clothes..."
+                class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+              />
+              <div
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center"
+              >
+                <i class="ri-search-line text-gray-400 text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="relative">
+              <div
+                class="w-8 h-8 flex items-center justify-center cursor-pointer"
+              >
+                <i class="ri-heart-line text-gray-600 text-lg"></i>
+              </div>
+              <span
+                class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >2</span
+              >
+            </div>
+            <div class="relative">
+              <div
+                class="w-8 h-8 flex items-center justify-center cursor-pointer"
+              >
+                <i class="ri-shopping-cart-line text-gray-600 text-lg"></i>
+              </div>
+              <span
+                class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+                >5</span
+              >
+            </div>
+            <div
+              class="w-8 h-8 flex items-center justify-center cursor-pointer"
+            >
+              <i class="ri-user-line text-gray-600 text-lg"></i>
+            </div>
+          </div>
+        </div>
+        <nav class="border-t border-gray-100">
+          <div class="flex items-center justify-center space-x-8 py-4">
+            <a href="#" class="text-primary hover:text-primary font-medium"
+              >Boys</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Girls</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Baby</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Shoes</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Accessories</a
+            >
+            <a href="#" class="text-secondary hover:text-secondary font-medium"
+              >Sale</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="bg-gray-50 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-2 text-sm">
+          <a href="#" class="text-gray-500 hover:text-primary">Home</a>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+          <a href="#" class="text-gray-500 hover:text-primary">Boys</a>
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+          <span class="text-gray-900 font-medium">All Products</span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900 mb-2">Boys Collection</h1>
+          <p class="text-gray-600">
+            Discover amazing outfits for your little adventurer
+          </p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            class="lg:hidden bg-white border border-gray-300 px-4 py-2 !rounded-button flex items-center space-x-2 hover:bg-gray-50"
+            onclick="toggleFilters()"
+          >
+            <i class="ri-filter-line"></i>
+            <span>Filters</span>
+          </button>
+          <div class="relative">
+            <select
+              class="bg-white border border-gray-300 px-4 py-2 !rounded-button pr-8 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            >
+              <option>Sort by: Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest First</option>
+              <option>Best Selling</option>
+              <option>Customer Rating</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-8">
+        <aside class="hidden lg:block w-64 flex-shrink-0">
+          <div
+            class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 sticky top-4"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-gray-900">Filters</h3>
+              <button class="text-sm text-primary hover:text-primary/80">
+                Clear All
+              </button>
+            </div>
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-medium text-gray-900 mb-3">Category</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="custom-checkbox mr-3"
+                      checked
+                    />
+                    <span class="text-sm text-gray-700">T-Shirts</span>
+                    <span class="text-xs text-gray-500 ml-auto">(42)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">Pants</span>
+                    <span class="text-xs text-gray-500 ml-auto">(38)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">Hoodies</span>
+                    <span class="text-xs text-gray-500 ml-auto">(24)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">Jackets</span>
+                    <span class="text-xs text-gray-500 ml-auto">(18)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">Costumes</span>
+                    <span class="text-xs text-gray-500 ml-auto">(32)</span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900 mb-3">Size</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">2T</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="custom-checkbox mr-3"
+                      checked
+                    />
+                    <span class="text-sm text-gray-700">3T</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">4T</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">5T</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">6-7 Years</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">8-10 Years</span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900 mb-3">Price Range</h4>
+                <div class="space-y-3">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="price-range"
+                  />
+                  <div class="flex justify-between text-sm text-gray-600">
+                    <span>$0</span>
+                    <span>$100</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <input
+                      type="number"
+                      placeholder="Min"
+                      class="w-20 px-2 py-1 border border-gray-300 rounded text-sm"
+                    />
+                    <span class="text-gray-500">-</span>
+                    <input
+                      type="number"
+                      placeholder="Max"
+                      class="w-20 px-2 py-1 border border-gray-300 rounded text-sm"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900 mb-3">Color</h4>
+                <div class="grid grid-cols-6 gap-2">
+                  <div
+                    class="w-8 h-8 bg-red-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-blue-500 rounded-full cursor-pointer border-2 border-blue-500"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-green-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-yellow-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-purple-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-pink-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-orange-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-gray-800 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                  ></div>
+                  <div
+                    class="w-8 h-8 bg-white rounded-full cursor-pointer border-2 border-gray-300 hover:border-gray-400"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900 mb-3">Brand</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">KidsWear</span>
+                    <span class="text-xs text-gray-500 ml-auto">(89)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">Little Adventures</span>
+                    <span class="text-xs text-gray-500 ml-auto">(45)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <span class="text-sm text-gray-700">Tiny Explorers</span>
+                    <span class="text-xs text-gray-500 ml-auto">(32)</span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900 mb-3">Rating</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <div class="flex items-center">
+                      <div class="flex">
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                      </div>
+                      <span class="text-sm text-gray-600 ml-2">5 Stars</span>
+                    </div>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <div class="flex items-center">
+                      <div class="flex">
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-line text-gray-300 text-sm"></i>
+                      </div>
+                      <span class="text-sm text-gray-600 ml-2">4+ Stars</span>
+                    </div>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="custom-checkbox mr-3" />
+                    <div class="flex items-center">
+                      <div class="flex">
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                        <i class="ri-star-line text-gray-300 text-sm"></i>
+                        <i class="ri-star-line text-gray-300 text-sm"></i>
+                      </div>
+                      <span class="text-sm text-gray-600 ml-2">3+ Stars</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div
+          class="fixed inset-0 z-50 lg:hidden filter-sidebar"
+          id="mobile-filters"
+        >
+          <div
+            class="bg-black bg-opacity-50 w-full h-full"
+            onclick="toggleFilters()"
+          ></div>
+          <div
+            class="absolute left-0 top-0 h-full w-80 bg-white shadow-xl overflow-y-auto"
+          >
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-semibold text-gray-900">Filters</h3>
+                <button
+                  onclick="toggleFilters()"
+                  class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600"
+                >
+                  <i class="ri-close-line text-xl"></i>
+                </button>
+              </div>
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-medium text-gray-900 mb-3">Category</h4>
+                  <div class="space-y-2">
+                    <label class="flex items-center">
+                      <input
+                        type="checkbox"
+                        class="custom-checkbox mr-3"
+                        checked
+                      />
+                      <span class="text-sm text-gray-700">T-Shirts</span>
+                      <span class="text-xs text-gray-500 ml-auto">(42)</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">Pants</span>
+                      <span class="text-xs text-gray-500 ml-auto">(38)</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">Hoodies</span>
+                      <span class="text-xs text-gray-500 ml-auto">(24)</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">Jackets</span>
+                      <span class="text-xs text-gray-500 ml-auto">(18)</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">Costumes</span>
+                      <span class="text-xs text-gray-500 ml-auto">(32)</span>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 mb-3">Size</h4>
+                  <div class="space-y-2">
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">2T</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input
+                        type="checkbox"
+                        class="custom-checkbox mr-3"
+                        checked
+                      />
+                      <span class="text-sm text-gray-700">3T</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">4T</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">5T</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">6-7 Years</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="custom-checkbox mr-3" />
+                      <span class="text-sm text-gray-700">8-10 Years</span>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 mb-3">Price Range</h4>
+                  <div class="space-y-3">
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value="50"
+                      class="price-range"
+                    />
+                    <div class="flex justify-between text-sm text-gray-600">
+                      <span>$0</span>
+                      <span>$100</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <input
+                        type="number"
+                        placeholder="Min"
+                        class="w-20 px-2 py-1 border border-gray-300 rounded text-sm"
+                      />
+                      <span class="text-gray-500">-</span>
+                      <input
+                        type="number"
+                        placeholder="Max"
+                        class="w-20 px-2 py-1 border border-gray-300 rounded text-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 mb-3">Color</h4>
+                  <div class="grid grid-cols-6 gap-2">
+                    <div
+                      class="w-8 h-8 bg-red-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-blue-500 rounded-full cursor-pointer border-2 border-blue-500"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-green-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-yellow-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-purple-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-pink-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-orange-500 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-gray-800 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-300"
+                    ></div>
+                    <div
+                      class="w-8 h-8 bg-white rounded-full cursor-pointer border-2 border-gray-300 hover:border-gray-400"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 border-t border-gray-200">
+                <div class="flex space-x-3">
+                  <button
+                    class="flex-1 bg-gray-100 text-gray-700 py-2 !rounded-button hover:bg-gray-200 transition-colors whitespace-nowrap"
+                  >
+                    Clear All
+                  </button>
+                  <button
+                    class="flex-1 bg-primary text-white py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                    onclick="toggleFilters()"
+                  >
+                    Apply Filters
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <main class="flex-1">
+          <div class="mb-6">
+            <div class="flex items-center justify-between">
+              <p class="text-gray-600">Showing 1-24 of 156 results</p>
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                  <button
+                    id="grid-view-1"
+                    class="p-2 border border-gray-300 !rounded-button hover:bg-gray-50"
+                  >
+                    <i class="ri-layout-grid-line"></i>
+                  </button>
+                  <button
+                    id="grid-view-2"
+                    class="p-2 border border-gray-300 !rounded-button hover:bg-gray-50 bg-gray-50"
+                  >
+                    <i class="ri-layout-2-line"></i>
+                  </button>
+                  <button
+                    id="list-view"
+                    class="p-2 border border-gray-300 !rounded-button hover:bg-gray-50"
+                  >
+                    <i class="ri-list-unordered"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="products-container"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12"
+          >
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal1')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20superhero%20t-shirt%20with%20cape%20design%2C%20blue%20and%20red%20colors%2C%20action%20hero%20themed%20clothing%2C%20dynamic%20graphic%20print%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing1&orientation=squarish"
+                  alt="Superhero T-Shirt"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+                <div
+                  class="absolute top-3 left-3 bg-green-500 text-white text-xs font-medium px-2 py-1 rounded-full"
+                >
+                  New
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Superhero Adventure T-Shirt
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.9 (87)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$18.99</span>
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >$24.99</span
+                  >
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Colors:</span>
+                  <div class="flex space-x-1">
+                    <div
+                      class="w-4 h-4 bg-blue-500 rounded-full border-2 border-blue-500"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-red-500 rounded-full border-2 border-gray-200"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-green-500 rounded-full border-2 border-gray-200"
+                    ></div>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal2')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20dinosaur%20hoodie%20with%20spikes%2C%20green%20color%20with%203D%20elements%2C%20fun%20and%20playful%20design%2C%20adventure%20themed%20clothing%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing2&orientation=squarish"
+                  alt="Dinosaur Hoodie"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+                <div
+                  class="absolute top-3 left-3 bg-secondary text-white text-xs font-medium px-2 py-1 rounded-full"
+                >
+                  Best Seller
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Roaring Dinosaur Hoodie
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-line text-gray-300 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.6 (124)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$32.99</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Colors:</span>
+                  <div class="flex space-x-1">
+                    <div
+                      class="w-4 h-4 bg-green-500 rounded-full border-2 border-green-500"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-orange-500 rounded-full border-2 border-gray-200"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-200"
+                    ></div>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal3')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20astronaut%20space%20suit%20costume%2C%20silver%20metallic%20design%20with%20NASA%20patches%2C%20futuristic%20children%20outfit%2C%20space%20exploration%20theme%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing3&orientation=squarish"
+                  alt="Astronaut Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Space Explorer Costume
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-line text-gray-300 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.5 (67)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$45.99</span>
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >$59.99</span
+                  >
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Sizes:</span>
+                  <div class="flex space-x-1">
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">S</span>
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">M</span>
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">L</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal4')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20pirate%20costume%20set%20with%20hat%20and%20eye%20patch%2C%20brown%20and%20black%20colors%2C%20adventure%20themed%20outfit%2C%20nautical%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing4&orientation=squarish"
+                  alt="Pirate Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+                <div
+                  class="absolute top-3 left-3 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full"
+                >
+                  Sale
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Captain Adventure Pirate Set
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.8 (156)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$28.99</span>
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >$39.99</span
+                  >
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Includes:</span>
+                  <span class="text-xs text-gray-500">Hat, Patch, Vest</span>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal5')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20ninja%20costume%20in%20black%20with%20mask%2C%20martial%20arts%20themed%20outfit%2C%20action%20hero%20clothing%2C%20stealthy%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing5&orientation=squarish"
+                  alt="Ninja Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Shadow Ninja Warrior Set
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-line text-gray-300 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.4 (93)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$26.99</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Colors:</span>
+                  <div class="flex space-x-1">
+                    <div
+                      class="w-4 h-4 bg-black rounded-full border-2 border-black"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-red-600 rounded-full border-2 border-gray-200"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-blue-600 rounded-full border-2 border-gray-200"
+                    ></div>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal6')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20robot%20costume%20with%20metallic%20silver%20design%2C%20LED%20lights%20and%20futuristic%20details%2C%20sci-fi%20themed%20outfit%2C%20modern%20technology%20style%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing6&orientation=squarish"
+                  alt="Robot Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+                <div
+                  class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-medium px-2 py-1 rounded-full"
+                >
+                  Trending
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Future Robot Commander
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-line text-gray-300 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.7 (78)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$42.99</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Features:</span>
+                  <span class="text-xs text-gray-500">LED Lights</span>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal7')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20knight%20costume%20with%20armor%20and%20sword%2C%20medieval%20themed%20outfit%2C%20silver%20and%20blue%20colors%2C%20brave%20warrior%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing7&orientation=squarish"
+                  alt="Knight Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Brave Knight Armor Set
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.9 (112)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$38.99</span>
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >$49.99</span
+                  >
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Includes:</span>
+                  <span class="text-xs text-gray-500"
+                    >Armor, Shield, Sword</span
+                  >
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal8')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20wizard%20costume%20with%20robe%20and%20hat%2C%20dark%20blue%20with%20golden%20stars%2C%20magical%20themed%20outfit%2C%20mystical%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing8&orientation=squarish"
+                  alt="Wizard Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+                <div
+                  class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-medium px-2 py-1 rounded-full"
+                >
+                  Limited
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Mystic Wizard Robe Set
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-line text-gray-300 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.6 (89)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$34.99</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Colors:</span>
+                  <div class="flex space-x-1">
+                    <div
+                      class="w-4 h-4 bg-indigo-600 rounded-full border-2 border-indigo-600"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-purple-600 rounded-full border-2 border-gray-200"
+                    ></div>
+                    <div
+                      class="w-4 h-4 bg-red-600 rounded-full border-2 border-gray-200"
+                    ></div>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal9')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20animal%20onesie%20pajamas%20tiger%20design%2C%20orange%20and%20black%20stripes%2C%20cozy%20sleepwear%20with%20hood%2C%20cute%20and%20comfortable%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing9&orientation=squarish"
+                  alt="Tiger Onesie"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Roaring Tiger Onesie
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.8 (145)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$24.99</span>
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >$32.99</span
+                  >
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Animals:</span>
+                  <div class="flex space-x-1">
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded"
+                      >Tiger</span
+                    >
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded"
+                      >Lion</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal10')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20racing%20car%20driver%20costume%2C%20red%20and%20white%20racing%20suit%20with%20helmet%2C%20speed%20themed%20outfit%2C%20professional%20driver%20look%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing10&orientation=squarish"
+                  alt="Racing Driver Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Speed Racer Driver Set
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-line text-gray-300 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.5 (76)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$36.99</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Includes:</span>
+                  <span class="text-xs text-gray-500"
+                    >Suit, Helmet, Gloves</span
+                  >
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal11')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20cowboy%20costume%20with%20hat%20and%20vest%2C%20brown%20leather%20look%20outfit%2C%20western%20themed%20clothing%2C%20wild%20west%20adventure%20style%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing11&orientation=squarish"
+                  alt="Cowboy Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Wild West Cowboy Set
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-line text-gray-300 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.3 (54)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$29.99</span>
+                  <span class="text-sm text-gray-500 line-through ml-2"
+                    >$39.99</span
+                  >
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Includes:</span>
+                  <span class="text-xs text-gray-500">Hat, Vest, Badge</span>
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer"
+              onclick="openModal('modal12')"
+            >
+              <div class="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Boys%20firefighter%20costume%20with%20helmet%20and%20jacket%2C%20red%20and%20yellow%20safety%20colors%2C%20hero%20themed%20outfit%2C%20emergency%20services%20design%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=300&height=300&seq=listing12&orientation=squarish"
+                  alt="Firefighter Costume"
+                  class="w-full h-64 object-cover object-top"
+                />
+                <div
+                  class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
+                >
+                  <i class="ri-heart-line text-gray-600 text-sm"></i>
+                </div>
+                <div
+                  class="absolute top-3 left-3 bg-yellow-500 text-white text-xs font-medium px-2 py-1 rounded-full"
+                >
+                  Popular
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Brave Firefighter Hero
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center">
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                    <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-2">4.9 (198)</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-lg font-bold text-gray-900">$33.99</span>
+                </div>
+                <div class="flex items-center mb-3">
+                  <span class="text-xs text-gray-600 mr-2">Includes:</span>
+                  <span class="text-xs text-gray-500"
+                    >Helmet, Jacket, Badge</span
+                  >
+                </div>
+                <button
+                  class="w-full bg-primary text-white font-medium py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-center space-x-2 mb-8">
+            <button
+              class="px-3 py-2 border border-gray-300 !rounded-button text-gray-500 cursor-not-allowed"
+            >
+              <i class="ri-arrow-left-line"></i>
+            </button>
+            <button class="px-4 py-2 bg-primary text-white !rounded-button">
+              1
+            </button>
+            <button
+              class="px-4 py-2 border border-gray-300 !rounded-button hover:bg-gray-50"
+            >
+              2
+            </button>
+            <button
+              class="px-4 py-2 border border-gray-300 !rounded-button hover:bg-gray-50"
+            >
+              3
+            </button>
+            <span class="px-2 text-gray-500">...</span>
+            <button
+              class="px-4 py-2 border border-gray-300 !rounded-button hover:bg-gray-50"
+            >
+              7
+            </button>
+            <button
+              class="px-3 py-2 border border-gray-300 !rounded-button hover:bg-gray-50"
+            >
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+          <div class="text-center">
+            <button
+              class="bg-primary text-white font-semibold px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+            >
+              Load More Products
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center mb-6">
+              <div
+                class="w-8 h-8 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mr-2"
+              >
+                <span class="text-white text-sm font-bold">K</span>
+              </div>
+              <span class="font-['Pacifico'] text-xl">KidsWear</span>
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              Creating magical moments through enchanting children's fashion
+              that sparks imagination and brings joy to every adventure.
+            </p>
+            <div class="flex space-x-4">
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill text-sm"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-line text-sm"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-line text-sm"></i>
+              </div>
+              <div
+                class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition-colors"
+              >
+                <i class="ri-youtube-line text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >New Arrivals</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Best Sellers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Sale Items</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Size Guide</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Gift Cards</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Customer Service</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Shipping Info</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Returns & Exchanges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Track Your Order</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+            <p class="text-gray-300 mb-4">
+              Subscribe to get special offers and updates!
+            </p>
+            <div class="flex mb-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+              />
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div class="flex items-center space-x-4 mt-6">
+              <span class="text-sm text-gray-400">We Accept:</span>
+              <div class="flex space-x-2">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-visa-fill text-blue-500"></i>
+                </div>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-mastercard-fill text-red-500"></i>
+                </div>
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-paypal-fill text-blue-400"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 KidsWear. All rights reserved. Made with ❤️ for magical
+              childhoods.
+            </p>
+            <div class="flex items-center space-x-6 text-sm">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Cookie Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="flex">
+          <div class="w-1/2 p-8">
+            <div class="relative mb-4">
+              <img
+                src="https://readdy.ai/api/search-image?query=Boys%20superhero%20t-shirt%20with%20cape%20design%2C%20blue%20and%20red%20colors%2C%20action%20hero%20themed%20clothing%2C%20dynamic%20graphic%20print%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20high%20quality&width=400&height=400&seq=modal1&orientation=squarish"
+                alt="Superhero T-Shirt"
+                class="w-full h-96 object-cover rounded-lg"
+              />
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+              <img
+                src="https://readdy.ai/api/search-image?query=Superhero%20t-shirt%20detail%20view%2C%20close%20up%20of%20cape%20design%2C%20fabric%20texture%2C%20high%20quality%20product%20detail&width=100&height=100&seq=modal1a&orientation=squarish"
+                alt="Detail 1"
+                class="w-full h-20 object-cover rounded cursor-pointer"
+              />
+              <img
+                src="https://readdy.ai/api/search-image?query=Superhero%20t-shirt%20back%20view%2C%20shirt%20from%20behind%2C%20design%20details%2C%20professional%20product%20photography&width=100&height=100&seq=modal1b&orientation=squarish"
+                alt="Detail 2"
+                class="w-full h-20 object-cover rounded cursor-pointer"
+              />
+              <img
+                src="https://readdy.ai/api/search-image?query=Superhero%20t-shirt%20fabric%20close%20up%2C%20material%20texture%2C%20quality%20details%2C%20high%20resolution%20detail%20shot&width=100&height=100&seq=modal1c&orientation=squarish"
+                alt="Detail 3"
+                class="w-full h-20 object-cover rounded cursor-pointer"
+              />
+              <img
+                src="https://readdy.ai/api/search-image?query=Superhero%20t-shirt%20size%20chart%2C%20measurement%20guide%2C%20professional%20product%20information%20display&width=100&height=100&seq=modal1d&orientation=squarish"
+                alt="Detail 4"
+                class="w-full h-20 object-cover rounded cursor-pointer"
+              />
+            </div>
+          </div>
+          <div class="w-1/2 p-8">
+            <div class="flex justify-between items-start mb-4">
+              <h2 class="text-2xl font-bold text-gray-900">
+                Superhero Adventure T-Shirt
+              </h2>
+              <button
+                onclick="closeModal('modal1')"
+                class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600"
+              >
+                <i class="ri-close-line text-xl"></i>
+              </button>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="flex items-center">
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+                <i class="ri-star-fill text-yellow-400"></i>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">4.9 (87 reviews)</span>
+            </div>
+            <div class="flex items-center mb-6">
+              <span class="text-3xl font-bold text-gray-900">$18.99</span>
+              <span class="text-xl text-gray-500 line-through ml-3"
+                >$24.99</span
+              >
+              <span
+                class="bg-red-100 text-red-800 text-sm font-medium px-2 py-1 rounded ml-3"
+                >24% OFF</span
+              >
+            </div>
+            <p class="text-gray-600 mb-6">
+              Transform your little hero with this amazing superhero t-shirt!
+              Features a dynamic cape design and vibrant colors that will make
+              every day an adventure.
+            </p>
+            <div class="mb-6">
+              <h3 class="font-semibold text-gray-900 mb-3">Size</h3>
+              <div class="flex space-x-2">
+                <button
+                  class="px-4 py-2 border border-gray-300 rounded hover:border-primary hover:text-primary"
+                >
+                  2T
+                </button>
+                <button
+                  class="px-4 py-2 border border-primary bg-primary text-white rounded"
+                >
+                  3T
+                </button>
+                <button
+                  class="px-4 py-2 border border-gray-300 rounded hover:border-primary hover:text-primary"
+                >
+                  4T
+                </button>
+                <button
+                  class="px-4 py-2 border border-gray-300 rounded hover:border-primary hover:text-primary"
+                >
+                  5T
+                </button>
+              </div>
+            </div>
+            <div class="mb-6">
+              <h3 class="font-semibold text-gray-900 mb-3">Color</h3>
+              <div class="flex space-x-2">
+                <div
+                  class="w-8 h-8 bg-blue-500 rounded-full border-2 border-blue-500 cursor-pointer"
+                ></div>
+                <div
+                  class="w-8 h-8 bg-red-500 rounded-full border-2 border-gray-200 cursor-pointer hover:border-red-500"
+                ></div>
+                <div
+                  class="w-8 h-8 bg-green-500 rounded-full border-2 border-gray-200 cursor-pointer hover:border-green-500"
+                ></div>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <button
+                class="flex-1 bg-primary text-white font-semibold py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Add to Cart
+              </button>
+              <button
+                class="w-12 h-12 border border-gray-300 rounded-button flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+              >
+                <i class="ri-heart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script id="filter-functionality">
+      function toggleFilters() {
+        const sidebar = document.getElementById("mobile-filters");
+        sidebar.classList.toggle("active");
+      }
+    </script>
+    <script id="modal-functionality">
+      function openModal(modalId) {
+        document.getElementById(modalId).classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach((modal) => {
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+              closeModal(modal.id);
+            }
+          });
+        });
+      });
+    </script>
+    <script id="product-interactions">
+      document.addEventListener("DOMContentLoaded", function () {
+        const heartIcons = document.querySelectorAll(".ri-heart-line");
+        const gridView1 = document.getElementById("grid-view-1");
+        const gridView2 = document.getElementById("grid-view-2");
+        const listView = document.getElementById("list-view");
+        const productsContainer = document.getElementById("products-container");
+        function setActiveView(activeButton) {
+          [gridView1, gridView2, listView].forEach((btn) => {
+            btn.classList.remove("bg-gray-50");
+          });
+          activeButton.classList.add("bg-gray-50");
+        }
+        gridView1.addEventListener("click", function () {
+          setActiveView(this);
+          productsContainer.className =
+            "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12";
+        });
+        gridView2.addEventListener("click", function () {
+          setActiveView(this);
+          productsContainer.className =
+            "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12";
+        });
+        listView.addEventListener("click", function () {
+          setActiveView(this);
+          productsContainer.className = "grid grid-cols-1 gap-6 mb-12";
+          const products = productsContainer.children;
+          Array.from(products).forEach((product) => {
+            product.className =
+              "product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer";
+            const content = product.innerHTML;
+            product.innerHTML = `
+      <div class="flex">
+      <div class="w-64 flex-shrink-0">
+      ${content.match(/<div class="relative">[\s\S]*?<\/div>/)[0]}
+      </div>
+      <div class="flex-1 p-6">
+      <div class="flex justify-between items-start mb-4">
+      <div>
+      <h3 class="font-semibold text-gray-900 mb-2">${content.match(/<h3[^>]*>(.*?)<\/h3>/)[1]}</h3>
+      <div class="flex items-center mb-2">
+      ${content.match(/<div class="flex items-center">([\s\S]*?)<\/div>/)[1]}
+      <span class="text-xs text-gray-500 ml-2">${content.match(/<span class="text-xs text-gray-500 ml-2">(.*?)<\/span>/)[1]}</span>
+      </div>
+      <p class="text-gray-600 text-sm mb-4 line-clamp-2">Experience the magic of childhood with this enchanting piece. Perfect for everyday adventures and special occasions, crafted with comfort and style in mind.</p>
+      </div>
+      <div class="text-right">
+      <div class="flex items-center justify-end mb-2">
+      ${content.match(/<span class="text-lg font-bold text-gray-900">(.*?)<\/span>/)[0]}
+      ${content.match(/<span class="text-sm text-gray-500 line-through ml-2">(.*?)<\/span>/) ? content.match(/<span class="text-sm text-gray-500 line-through ml-2">(.*?)<\/span>/)[0] : ""}
+      </div>
+      <span class="text-sm text-green-600">In Stock</span>
+      </div>
+      </div>
+      <div class="flex items-center justify-between">
+      <div>
+      <div class="flex items-center mb-3">
+      <span class="text-sm text-gray-600 mr-3">Available Sizes:</span>
+      <div class="flex space-x-2">
+      <span class="px-2 py-1 text-xs bg-gray-100 rounded">2T</span>
+      <span class="px-2 py-1 text-xs bg-gray-100 rounded">3T</span>
+      <span class="px-2 py-1 text-xs bg-gray-100 rounded">4T</span>
+      <span class="px-2 py-1 text-xs bg-gray-100 rounded">5T</span>
+      </div>
+      </div>
+      <div class="flex items-center">
+      <span class="text-sm text-gray-600 mr-3">Colors:</span>
+      <div class="flex space-x-2">
+      ${content.match(/<div class="flex space-x-1">([\s\S]*?)<\/div>/)[1]}
+      </div>
+      </div>
+      </div>
+      <div class="flex items-center space-x-3">
+      <button class="bg-primary text-white font-medium px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">Add to Cart</button>
+      <button class="w-10 h-10 border border-gray-300 !rounded-button flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+      <i class="ri-heart-line"></i>
+      </button>
+      </div>
+      </div>
+      </div>
+      </div>`;
+          });
+        });
+        heartIcons.forEach((icon) => {
+          icon.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (this.classList.contains("ri-heart-line")) {
+              this.classList.remove("ri-heart-line");
+              this.classList.add("ri-heart-fill");
+              this.style.color = "#EC4899";
+            } else {
+              this.classList.remove("ri-heart-fill");
+              this.classList.add("ri-heart-line");
+              this.style.color = "";
+            }
+          });
+        });
+      });
+    </script>
+    <script id="search-functionality">
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(
+          'input[placeholder="Search for magical clothes..."]',
+        );
+        searchInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            console.log("Searching for:", this.value);
+          }
+        });
+      });
+    </script>
+    <script id="color-selection">
+      document.addEventListener("DOMContentLoaded", function () {
+        const colorOptions = document.querySelectorAll(".w-8.h-8.rounded-full");
+        colorOptions.forEach((color) => {
+          color.addEventListener("click", function () {
+            const parent = this.parentElement;
+            parent.querySelectorAll(".w-8.h-8.rounded-full").forEach((c) => {
+              c.classList.remove("border-2");
+              c.classList.add("border-2", "border-gray-200");
+            });
+            this.classList.remove("border-gray-200");
+            const bgColor = this.classList.find((cls) => cls.includes("bg-"));
+            const borderColor = bgColor.replace("bg-", "border-");
+            this.classList.add("border-2", borderColor);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
